@@ -12,6 +12,7 @@ import {
   ArrowRight,
   CheckCircle2,
 } from "lucide-react";
+import SocialAuthOptions from "./SocialAuthOptions";
 import "./Signup.css";
 
 function Signup() {
@@ -188,6 +189,8 @@ function Signup() {
             Submit Registration <ArrowRight size={19} />
           </motion.button>
         </form>
+
+        <SocialAuthOptions mode="signup" />
 
         <div className="signup-login">
           Already have an account? <Link to="/login">Sign in</Link>

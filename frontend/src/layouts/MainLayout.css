@@ -1,3 +1,5 @@
+@import "../styles/admin/AdminTheme.css";
+
 .dashboard-layout {
   display: flex;
   min-height: 100vh;
@@ -18,7 +20,8 @@
 .admin-app-layout {
   min-height: 100vh;
   width: 100%;
-  background: #f5f6fc;
+  background: var(--admin-bg, #f8fafc);
+  color: var(--admin-text, #0f172a);
 }
 
 .admin-main-content {

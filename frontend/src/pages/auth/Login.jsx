@@ -17,6 +17,7 @@ import {
   Users,
   LoaderCircle,
 } from "lucide-react";
+import SocialAuthOptions from "./SocialAuthOptions";
 import "./Login.css";
 
 const roles = [
@@ -117,8 +118,8 @@ function Login() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ delay: 0.2 }}
           >
-            <div className="school-logo">
-              <GraduationCap size={32} />
+            <div className="school-logo" role="img" aria-label="EduManage school logo">
+              <GraduationCap size={32} aria-hidden="true" />
             </div>
 
             <div>
@@ -324,6 +325,8 @@ function Login() {
                 )}
               </motion.button>
             </form>
+
+            <SocialAuthOptions mode="login" />
 
             <div className="security-note">
               <ShieldCheck size={17} />
