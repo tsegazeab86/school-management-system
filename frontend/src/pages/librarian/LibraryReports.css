@@ -1,0 +1,525 @@
+
+.library-reports-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f5f7fb;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+.library-reports-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.library-reports-eyebrow {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.library-reports-header h2 {
+  margin: 7px 0;
+  font-size: 29px;
+  font-weight: 750;
+}
+
+.library-reports-header p {
+  margin: 0;
+  color: #7b8495;
+  font-size: 14px;
+}
+
+.library-report-export {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 17px;
+  border: none;
+  border-radius: 9px;
+  background: #2459c5;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.library-report-export:hover {
+  background: #17449f;
+  transform: translateY(-2px);
+}
+
+.library-report-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 23px;
+}
+
+.library-report-stat {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 17px;
+  background: white;
+  border: 1px solid #edf0f5;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.035);
+}
+
+.library-report-stat-icon {
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 12px;
+}
+
+.library-report-stat-icon.blue {
+  color: #2563eb;
+  background: #eaf1ff;
+}
+
+.library-report-stat-icon.purple {
+  color: #7c3aed;
+  background: #f2edff;
+}
+
+.library-report-stat-icon.green {
+  color: #059669;
+  background: #e9f9f2;
+}
+
+.library-report-stat-icon.red {
+  color: #dc2626;
+  background: #fff0f0;
+}
+
+.library-report-stat span {
+  color: #667085;
+  font-size: 13px;
+}
+
+.library-report-stat h3 {
+  margin: 5px 0 3px;
+  font-size: 25px;
+  font-weight: 750;
+}
+
+.library-report-stat small {
+  color: #98a1b1;
+  font-size: 11px;
+}
+
+.library-report-charts {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 19px;
+  margin-bottom: 20px;
+}
+
+.library-report-card {
+  padding: 22px;
+  background: white;
+  border: 1px solid #edf0f5;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.035);
+  min-width: 0;
+}
+
+.library-report-card-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.library-report-card-heading h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 6px;
+  color: #253249;
+  font-size: 17px;
+  font-weight: 700;
+}
+
+.library-report-card-heading h3 svg {
+  color: #315fca;
+}
+
+.library-report-card-heading p {
+  margin: 0;
+  color: #8993a4;
+  font-size: 12px;
+}
+
+.library-report-card-heading select {
+  padding: 9px 11px;
+  border: 1px solid #e2e7ef;
+  border-radius: 8px;
+  outline: none;
+  background: white;
+  color: #526075;
+  font-size: 11px;
+}
+
+.library-chart-legend {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  margin-bottom: 15px;
+}
+
+.library-chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.library-chart-legend i {
+  width: 9px;
+  height: 9px;
+  border-radius: 3px;
+}
+
+.issued-dot {
+  background: #3977e8;
+}
+
+.returned-dot {
+  background: #16b981;
+}
+
+.monthly-chart {
+  height: 210px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-around;
+  gap: 12px;
+  padding: 10px 5px 0;
+  border-bottom: 1px solid #e9edf3;
+}
+
+.monthly-chart-column {
+  height: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 9px;
+}
+
+.monthly-bars {
+  height: 175px;
+  width: 100%;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  gap: 5px;
+}
+
+.monthly-bar {
+  width: min(25px, 40%);
+  min-height: 3px;
+  border-radius: 5px 5px 0 0;
+  transition: height 0.4s ease;
+}
+
+.issued-bar {
+  background: #3977e8;
+}
+
+.returned-bar {
+  background: #16b981;
+}
+
+.monthly-chart-column > span {
+  color: #8993a4;
+  font-size: 11px;
+  padding-bottom: 8px;
+}
+
+.category-report-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.category-report-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 7px;
+  color: #526075;
+  font-size: 12px;
+}
+
+.category-report-label strong {
+  color: #253249;
+}
+
+.category-report-track {
+  width: 100%;
+  height: 8px;
+  border-radius: 20px;
+  background: #edf0f5;
+  overflow: hidden;
+}
+
+.category-report-fill {
+  height: 100%;
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.popular-books-card {
+  margin-bottom: 20px;
+}
+
+.popular-books-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.popular-book-item {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 2px;
+  border-bottom: 1px solid #edf0f4;
+}
+
+.popular-book-item:last-child {
+  border-bottom: none;
+}
+
+.popular-book-rank {
+  width: 31px;
+  height: 31px;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  background: #eff4ff;
+  color: #315fca;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.popular-book-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.popular-book-info strong {
+  display: block;
+  color: #334155;
+  font-size: 13px;
+}
+
+.popular-book-info small {
+  display: block;
+  margin-top: 4px;
+  color: #98a1b1;
+  font-size: 11px;
+}
+
+.popular-book-count {
+  text-align: right;
+}
+
+.popular-book-count strong {
+  display: block;
+  color: #2459c5;
+  font-size: 16px;
+}
+
+.popular-book-count span {
+  color: #98a1b1;
+  font-size: 10px;
+}
+
+.library-records-card {
+  margin-bottom: 18px;
+}
+
+.library-record-count {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #eff4ff;
+  color: #315fca;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.library-record-toolbar {
+  display: flex;
+  gap: 11px;
+  margin-bottom: 18px;
+}
+
+.library-record-search {
+  flex: 1;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  border: 1px solid #e2e7ef;
+  border-radius: 9px;
+  color: #8290a4;
+}
+
+.library-record-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #334155;
+  font-size: 12px;
+}
+
+.library-record-filter {
+  min-width: 150px;
+  height: 43px;
+  padding: 0 12px;
+  border: 1px solid #e2e7ef;
+  border-radius: 9px;
+  outline: none;
+  background: white;
+  color: #526075;
+  font-size: 12px;
+}
+
+.library-record-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.library-record-table {
+  width: 100%;
+  min-width: 850px;
+  border-collapse: collapse;
+}
+
+.library-record-table th {
+  padding: 13px 11px;
+  background: #f8fafc;
+  color: #738096;
+  text-align: left;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.library-record-table td {
+  padding: 14px 11px;
+  border-bottom: 1px solid #edf0f4;
+  color: #526075;
+  font-size: 11px;
+}
+
+.library-record-table td strong {
+  color: #315fca;
+}
+
+.library-record-status {
+  display: inline-block;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.library-record-status.issued {
+  color: #2563eb;
+  background: #eaf1ff;
+}
+
+.library-record-status.returned {
+  color: #059669;
+  background: #e9f9f1;
+}
+
+.library-record-status.overdue {
+  color: #dc2626;
+  background: #fff0ef;
+}
+
+.library-record-empty {
+  padding: 35px !important;
+  text-align: center;
+  color: #94a3b8 !important;
+}
+
+.library-report-footer {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8290a4;
+  font-size: 12px;
+}
+
+.library-report-footer svg {
+  flex-shrink: 0;
+}
+
+@media (max-width: 1100px) {
+  .library-report-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .library-report-charts {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .library-reports-page {
+    padding: 16px;
+  }
+
+  .library-reports-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .library-reports-header h2 {
+    font-size: 25px;
+  }
+
+  .library-report-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .library-report-card {
+    padding: 15px;
+  }
+
+  .library-report-card-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .library-record-toolbar {
+    flex-direction: column;
+  }
+
+  .library-record-filter {
+    width: 100%;
+  }
+
+  .monthly-chart {
+    gap: 5px;
+  }
+}

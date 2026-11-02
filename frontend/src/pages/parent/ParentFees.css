@@ -1,0 +1,843 @@
+
+.parent-fees-page {
+  min-height: 100vh;
+  padding: 25px;
+  background: #f5f6fc;
+  color: #263247;
+}
+
+/* Hero */
+.pf-hero {
+  position: relative;
+  overflow: hidden;
+  padding: 35px;
+  min-height: 235px;
+  color: white;
+  border-radius: 22px;
+  background: linear-gradient(115deg, #263b86, #5268d8 60%, #8177e9);
+  box-shadow: 0 12px 30px rgba(67, 85, 185, 0.2);
+  margin-bottom: 25px;
+}
+
+.pf-hero::before,
+.pf-hero::after {
+  content: "";
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.pf-hero::before {
+  width: 280px;
+  height: 280px;
+  right: 90px;
+  top: -190px;
+}
+
+.pf-hero::after {
+  width: 210px;
+  height: 210px;
+  right: -40px;
+  bottom: -120px;
+}
+
+.pf-hero-content {
+  position: relative;
+  z-index: 2;
+  max-width: 600px;
+}
+
+.pf-hero-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 7px;
+  padding: 7px 12px;
+  background: rgba(255, 255, 255, 0.13);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 30px;
+  font-size: 11px;
+  font-weight: 750;
+  letter-spacing: 1.2px;
+  margin-bottom: 15px;
+}
+
+.pf-hero h2 {
+  font-size: 34px;
+  font-weight: 800;
+  margin-bottom: 9px;
+}
+
+.pf-hero p {
+  color: rgba(255, 255, 255, 0.83);
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.pf-hero-note {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 9px;
+  font-size: 12px;
+  color: #e0ffed;
+}
+
+.pf-hero-decoration {
+  position: absolute;
+  right: 65px;
+  top: 55px;
+  color: rgba(255, 255, 255, 0.16);
+  transform: rotate(-12deg);
+  transition: transform 0.5s ease;
+}
+
+.pf-hero:hover .pf-hero-decoration {
+  transform: rotate(5deg) scale(1.12);
+}
+
+/* Child filter */
+.pf-child-filter {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding: 20px 23px;
+  margin-bottom: 24px;
+  border: 1px solid #eceef5;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 5px 18px rgba(35, 48, 75, 0.035);
+}
+
+.pf-child-filter span,
+.pf-progress-heading span,
+.pf-section-heading span,
+.pf-history-header > div > span {
+  display: block;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.2px;
+  color: #8173d9;
+  margin-bottom: 6px;
+}
+
+.pf-child-filter h4 {
+  font-size: 17px;
+  font-weight: 750;
+  margin: 0;
+}
+
+.pf-child-filter .form-select {
+  max-width: 250px;
+  min-width: 200px;
+  padding: 11px;
+  font-size: 13px;
+  border-color: #e7eaf0;
+  cursor: pointer;
+}
+
+/* Summary */
+.pf-stat-row {
+  margin-bottom: 24px;
+}
+
+.pf-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 17px;
+  height: 100%;
+  padding: 23px;
+  background: white;
+  border: 1px solid #eceef5;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(35, 48, 75, 0.04);
+  transition: all 0.3s ease;
+}
+
+.pf-stat-card:hover {
+  border-color: #d9d1ff;
+  box-shadow: 0 12px 27px rgba(35, 48, 75, 0.1);
+}
+
+.pf-stat-icon {
+  width: 54px;
+  height: 54px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 15px;
+  transition: transform 0.3s ease;
+}
+
+.pf-stat-card:hover .pf-stat-icon {
+  transform: rotate(-8deg) scale(1.1);
+}
+
+.pf-stat-icon.purple {
+  color: #6754d9;
+  background: #eeeaff;
+}
+
+.pf-stat-icon.green {
+  color: #159b68;
+  background: #e3f8ef;
+}
+
+.pf-stat-icon.orange {
+  color: #e18b28;
+  background: #fff1dc;
+}
+
+.pf-stat-card span {
+  font-size: 13px;
+  color: #7d879a;
+}
+
+.pf-stat-card h3 {
+  font-size: 23px;
+  font-weight: 800;
+  margin: 5px 0;
+  color: #263247;
+}
+
+.pf-stat-card small {
+  font-size: 11px;
+  color: #a0a7b4;
+}
+
+/* Payment progress */
+.pf-progress-card {
+  padding: 23px;
+  margin-bottom: 32px;
+  background: white;
+  border: 1px solid #eceef5;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(35, 48, 75, 0.04);
+}
+
+.pf-progress-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.pf-progress-heading h4 {
+  font-size: 18px;
+  font-weight: 750;
+  margin: 0;
+}
+
+.pf-progress-heading > strong {
+  color: #6754d9;
+  font-size: 25px;
+  font-weight: 800;
+}
+
+.pf-progress {
+  height: 12px;
+  background: #eceef5;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.pf-progress .progress-bar {
+  background: linear-gradient(90deg, #6754d9, #2dbb8a);
+  border-radius: 20px;
+  transition: width 0.8s ease;
+}
+
+.pf-progress-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-top: 12px;
+  color: #8992a3;
+  font-size: 12px;
+}
+
+/* Fee breakdown */
+.pf-section-heading {
+  margin-bottom: 18px;
+}
+
+.pf-section-heading h3 {
+  font-size: 23px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.pf-section-heading p {
+  font-size: 13px;
+  color: #8992a3;
+  margin: 0;
+}
+
+.pf-breakdown-row {
+  margin-bottom: 30px;
+}
+
+.pf-breakdown-card {
+  height: 100%;
+  padding: 22px;
+  background: white;
+  border: 1px solid #eceef5;
+  border-radius: 16px;
+  box-shadow: 0 5px 18px rgba(35, 48, 75, 0.04);
+  transition: all 0.3s ease;
+}
+
+.pf-breakdown-card:hover {
+  border-color: #d9d1ff;
+  box-shadow: 0 12px 25px rgba(35, 48, 75, 0.09);
+}
+
+.pf-breakdown-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 17px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.pf-student-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  color: #6754d9;
+  background: #eeeaff;
+  border-radius: 13px;
+}
+
+.pf-student-info {
+  flex: 1;
+}
+
+.pf-student-info h5 {
+  font-size: 15px;
+  font-weight: 750;
+  margin-bottom: 4px;
+}
+
+.pf-student-info span {
+  font-size: 12px;
+  color: #8992a3;
+}
+
+.pf-payment-status {
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.pf-payment-status.paid {
+  color: #159b68;
+  background: #e3f8ef;
+}
+
+.pf-payment-status.unpaid {
+  color: #c47b1c;
+  background: #fff1dc;
+}
+
+.pf-fee-items {
+  padding: 15px 0;
+}
+
+.pf-fee-item {
+  display: flex;
+  justify-content: space-between;
+  padding: 9px 0;
+  color: #7c8799;
+  font-size: 13px;
+}
+
+.pf-fee-item strong {
+  color: #354057;
+  font-size: 13px;
+}
+
+.pf-fee-total {
+  display: flex;
+  justify-content: space-between;
+  padding: 14px 0;
+  border-top: 1px solid #edf0f5;
+  border-bottom: 1px solid #edf0f5;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.pf-fee-total strong {
+  color: #6754d9;
+}
+
+.pf-fee-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding-top: 16px;
+}
+
+.pf-fee-footer span,
+.pf-fee-footer strong {
+  display: block;
+}
+
+.pf-fee-footer span {
+  color: #8992a3;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.pf-fee-footer strong {
+  font-size: 14px;
+}
+
+.pf-due-date {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 17px;
+  padding: 11px;
+  border-radius: 9px;
+  background: #f7f8fc;
+  color: #778196;
+  font-size: 12px;
+}
+
+/* History */
+.pf-history-card {
+  background: white;
+  border: 1px solid #eceef5;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 5px 18px rgba(35, 48, 75, 0.04);
+}
+
+.pf-history-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  padding: 23px;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.pf-history-header h3 {
+  font-size: 21px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+.pf-history-header p {
+  font-size: 12px;
+  color: #8992a3;
+  margin: 0;
+}
+
+.pf-transaction-total {
+  text-align: right;
+  padding: 12px 16px;
+  background: #e9f8f0;
+  border-radius: 11px;
+}
+
+.pf-transaction-total span {
+  display: block;
+  color: #55856c;
+  font-size: 10px;
+}
+
+.pf-transaction-total strong {
+  display: block;
+  color: #159b68;
+  font-size: 17px;
+  margin-top: 5px;
+}
+
+.pf-history-filters {
+  display: flex;
+  gap: 14px;
+  padding: 18px 23px;
+}
+
+.pf-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex: 1;
+  padding: 11px 13px;
+  color: #8992a3;
+  border: 1px solid #e7eaf0;
+  border-radius: 9px;
+}
+
+.pf-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  font-size: 13px;
+}
+
+.pf-status-filter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8992a3;
+  min-width: 165px;
+}
+
+.pf-status-filter .form-select {
+  font-size: 13px;
+  padding: 10px;
+  border-color: #e7eaf0;
+}
+
+.pf-table {
+  min-width: 950px;
+  margin: 0;
+}
+
+.pf-table thead th {
+  background: #f8f9fc;
+  color: #778196;
+  font-size: 11px;
+  font-weight: 750;
+  padding: 15px 13px;
+  white-space: nowrap;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.pf-table tbody td {
+  padding: 15px 13px;
+  font-size: 12px;
+  color: #596579;
+  border-color: #f0f1f5;
+}
+
+.pf-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.pf-table tbody tr:hover {
+  background: #faf9ff;
+}
+
+.pf-receipt-number {
+  color: #6754d9;
+}
+
+.pf-payment-date {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;
+}
+
+.pf-payment-date svg {
+  color: #8992a3;
+}
+
+.pf-transaction-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 750;
+  white-space: nowrap;
+}
+
+.pf-transaction-status.completed {
+  background: #e3f8ef;
+  color: #159b68;
+}
+
+.pf-transaction-status.pending {
+  background: #fff1dc;
+  color: #c47b1c;
+}
+
+.pf-receipt-btn {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  color: #6754d9;
+  background: #eeeaff;
+  border: none;
+  border-radius: 8px;
+  transition: all 0.2s ease;
+}
+
+.pf-receipt-btn:hover {
+  color: white;
+  background: #6754d9;
+  transform: scale(1.08);
+}
+
+.pf-empty {
+  text-align: center;
+  padding: 45px 20px;
+  color: #8992a3;
+}
+
+.pf-empty svg {
+  margin-bottom: 12px;
+}
+
+.pf-empty h5 {
+  color: #263247;
+  font-weight: 750;
+}
+
+/* Receipt modal */
+.pf-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 18px;
+  background: rgba(17, 24, 39, 0.62);
+}
+
+.pf-receipt-modal {
+  width: 100%;
+  max-width: 480px;
+  max-height: 90vh;
+  overflow-y: auto;
+  padding: 25px;
+  border-radius: 19px;
+  background: white;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.pf-modal-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pf-receipt-logo {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  color: #6754d9;
+  background: #eeeaff;
+  border-radius: 12px;
+}
+
+.pf-modal-close {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 9px;
+  color: #596579;
+  background: #f1f2f6;
+}
+
+.pf-modal-close:hover {
+  color: #dc3545;
+  background: #ffe8e8;
+}
+
+.pf-receipt-title {
+  text-align: center;
+  padding: 22px 0;
+  border-bottom: 1px dashed #dfe2eb;
+}
+
+.pf-receipt-title > svg {
+  color: #159b68;
+  margin-bottom: 10px;
+}
+
+.pf-receipt-title h3 {
+  font-size: 21px;
+  font-weight: 800;
+}
+
+.pf-receipt-title p {
+  color: #8992a3;
+  font-size: 12px;
+  margin: 0;
+}
+
+.pf-receipt-amount {
+  text-align: center;
+  padding: 20px 0;
+}
+
+.pf-receipt-amount > span:first-child {
+  display: block;
+  color: #8992a3;
+  font-size: 12px;
+  margin-bottom: 6px;
+}
+
+.pf-receipt-amount h2 {
+  color: #6754d9;
+  font-size: 30px;
+  font-weight: 850;
+  margin-bottom: 12px;
+}
+
+.pf-receipt-details {
+  padding: 14px 0;
+  border-top: 1px dashed #dfe2eb;
+}
+
+.pf-receipt-details div {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 10px 0;
+  border-bottom: 1px solid #f0f1f5;
+  font-size: 12px;
+}
+
+.pf-receipt-details span {
+  color: #8992a3;
+}
+
+.pf-receipt-details strong {
+  color: #344057;
+  text-align: right;
+}
+
+.pf-pending-note {
+  padding: 11px;
+  border-radius: 9px;
+  background: #fff6e6;
+  color: #986c20;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+.pf-print-btn,
+.pf-close-btn {
+  width: 100%;
+  padding: 11px;
+  margin-top: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  font-size: 13px;
+}
+
+.pf-print-btn {
+  color: white;
+  background: #6754d9;
+}
+
+.pf-print-btn:hover:not(:disabled) {
+  color: white;
+  background: #5140bc;
+}
+
+.pf-print-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.pf-close-btn {
+  color: #596579;
+  background: #f1f2f6;
+}
+
+.pf-close-btn:hover {
+  background: #e5e7ef;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .parent-fees-page {
+    padding: 15px;
+  }
+
+  .pf-hero {
+    padding: 25px;
+  }
+
+  .pf-hero h2 {
+    font-size: 27px;
+  }
+
+  .pf-hero-decoration {
+    right: 5px;
+    opacity: 0.35;
+  }
+
+  .pf-child-filter {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pf-child-filter .form-select {
+    width: 100%;
+    max-width: none;
+  }
+
+  .pf-history-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .pf-transaction-total {
+    text-align: left;
+  }
+
+  .pf-history-filters {
+    flex-direction: column;
+  }
+
+  .pf-status-filter {
+    width: 100%;
+  }
+
+  .pf-progress-footer {
+    font-size: 11px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pf-stat-card {
+    padding: 17px;
+  }
+
+  .pf-stat-card h3 {
+    font-size: 20px;
+  }
+
+  .pf-breakdown-header {
+    flex-wrap: wrap;
+  }
+
+  .pf-history-header h3 {
+    font-size: 19px;
+  }
+
+  .pf-receipt-modal {
+    padding: 18px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .parent-fees-page *,
+  .parent-fees-page *::before,
+  .parent-fees-page *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}

@@ -1,0 +1,442 @@
+
+.teacher-reports {
+  padding: 25px;
+  min-height: 100vh;
+  background: #f5f6fb;
+  color: #253047;
+}
+
+.tr-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.tr-header h1 {
+  margin: 0 0 7px;
+  font-size: 27px;
+}
+
+.tr-header p,
+.tr-panel-heading p,
+.tr-table-heading p {
+  color: #8b95a7;
+  font-size: 12px;
+  margin: 0;
+}
+
+.tr-header-actions {
+  display: flex;
+  gap: 10px;
+}
+
+.tr-header-actions button {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 11px 15px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  font-weight: 600;
+  font-size: 12px;
+}
+
+.tr-print-btn {
+  background: white;
+  color: #5945ae;
+  border: 1px solid #e5e2f2 !important;
+}
+
+.tr-export-btn {
+  background: #5945ae;
+  color: white;
+}
+
+.tr-filters {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  flex-wrap: wrap;
+  margin-bottom: 22px;
+}
+
+.tr-search,
+.tr-filter-control,
+.tr-subject-filter {
+  height: 43px;
+  background: white;
+  border: 1px solid #e7eaf1;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  padding: 0 12px;
+  color: #9099aa;
+}
+
+.tr-search {
+  flex: 1;
+  min-width: 200px;
+}
+
+.tr-search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 12px;
+}
+
+.tr-filters select {
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #58647a;
+  font-size: 12px;
+  cursor: pointer;
+}
+
+.tr-subject-filter {
+  min-width: 145px;
+}
+
+.tr-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  margin-bottom: 22px;
+}
+
+.tr-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: white;
+  border: 1px solid #edf0f5;
+  padding: 18px;
+  border-radius: 10px;
+}
+
+.tr-stat-icon {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+}
+
+.tr-stat-icon.purple {
+  background: #eeeaff;
+  color: #654fc3;
+}
+
+.tr-stat-icon.blue {
+  background: #e5efff;
+  color: #3475cc;
+}
+
+.tr-stat-icon.green {
+  background: #e1f8ec;
+  color: #23995f;
+}
+
+.tr-stat-icon.orange {
+  background: #fff0e2;
+  color: #df883b;
+}
+
+.tr-stat-card span {
+  font-size: 11px;
+  color: #8b95a7;
+}
+
+.tr-stat-card h2 {
+  margin: 5px 0;
+  font-size: 23px;
+}
+
+.tr-stat-card small {
+  color: #a0a8b6;
+  font-size: 10px;
+}
+
+.tr-chart-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 17px;
+  margin-bottom: 22px;
+}
+
+.tr-panel,
+.tr-table-panel {
+  background: white;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  padding: 20px;
+}
+
+.tr-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  color: #5945ae;
+  margin-bottom: 24px;
+}
+
+.tr-panel-heading h2,
+.tr-table-heading h2 {
+  color: #29334b;
+  font-size: 15px;
+  margin: 0 0 6px;
+}
+
+.tr-class-bars {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.tr-bar-label {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 9px;
+  font-size: 11px;
+}
+
+.tr-bar-label strong {
+  color: #5945ae;
+}
+
+.tr-bar-track,
+.tr-grade-track {
+  background: #f0eff7;
+  height: 9px;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.tr-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #5945ae, #a18be9);
+  border-radius: 20px;
+  transition: width .3s;
+}
+
+.tr-grade-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.tr-grade-row {
+  display: grid;
+  grid-template-columns: 25px 1fr 20px;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+}
+
+.tr-grade-row > strong {
+  color: #505b72;
+}
+
+.tr-grade-row > span {
+  color: #8993a5;
+  text-align: right;
+}
+
+.tr-grade-fill {
+  height: 100%;
+  border-radius: 20px;
+}
+
+.grade-A {
+  background: #22b978;
+}
+
+.grade-B {
+  background: #4b83e7;
+}
+
+.grade-C {
+  background: #8b70d7;
+}
+
+.grade-D {
+  background: #e5a449;
+}
+
+.grade-F {
+  background: #e16c6c;
+}
+
+.tr-table-panel {
+  padding: 0;
+  overflow: hidden;
+}
+
+.tr-table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 12px;
+  padding: 20px;
+}
+
+.tr-table-heading > span {
+  background: #eeeaff;
+  color: #5945ae;
+  padding: 7px 10px;
+  border-radius: 6px;
+  font-size: 11px;
+  white-space: nowrap;
+}
+
+.tr-table-wrapper {
+  overflow-x: auto;
+}
+
+.tr-table {
+  border-collapse: collapse;
+  width: 100%;
+  min-width: 750px;
+}
+
+.tr-table th {
+  background: #f8f8fc;
+  color: #8993a5;
+  font-size: 11px;
+  font-weight: 600;
+  text-align: left;
+  padding: 14px 15px;
+}
+
+.tr-table td {
+  padding: 14px 15px;
+  border-top: 1px solid #f0f1f5;
+  color: #647087;
+  font-size: 11px;
+}
+
+.tr-table tbody tr:hover {
+  background: #faf9ff;
+}
+
+.tr-table .tr-student-name {
+  color: #303b52;
+  font-weight: 600;
+}
+
+.tr-grade-badge {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 5px;
+  font-size: 10px;
+  font-weight: 700;
+}
+
+.tr-grade-badge.grade-A {
+  background: #e0f8eb;
+  color: #15965a;
+}
+
+.tr-grade-badge.grade-B {
+  background: #e5efff;
+  color: #3475cc;
+}
+
+.tr-grade-badge.grade-C {
+  background: #eeeaff;
+  color: #654fc3;
+}
+
+.tr-grade-badge.grade-D {
+  background: #fff1df;
+  color: #c17c22;
+}
+
+.tr-grade-badge.grade-F {
+  background: #ffebeb;
+  color: #d54d4d;
+}
+
+.tr-attendance {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.tr-attendance > div {
+  height: 6px;
+  width: 55px;
+  border-radius: 20px;
+  background: #edf0f5;
+  overflow: hidden;
+}
+
+.tr-attendance > div > div {
+  height: 100%;
+  background: #29b879;
+  border-radius: 20px;
+}
+
+.tr-no-results {
+  text-align: center !important;
+  padding: 30px !important;
+}
+
+@media (max-width: 1000px) {
+  .tr-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .teacher-reports {
+    padding: 15px;
+  }
+
+  .tr-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .tr-chart-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .tr-stat-grid {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .tr-filters {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tr-search,
+  .tr-filter-control,
+  .tr-subject-filter {
+    width: 100%;
+  }
+}
+
+@media print {
+  .teacher-reports {
+    background: white;
+    padding: 0;
+  }
+
+  .tr-header-actions,
+  .tr-filters {
+    display: none;
+  }
+
+  .tr-stat-card,
+  .tr-panel,
+  .tr-table-panel {
+    break-inside: avoid;
+  }
+}

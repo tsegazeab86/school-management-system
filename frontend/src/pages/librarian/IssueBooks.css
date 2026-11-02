@@ -1,0 +1,752 @@
+
+.issue-books-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f5f7fb;
+  color: #202a40;
+  font-family: "Inter", "Segoe UI", sans-serif;
+}
+
+.ib-page-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.ib-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #8d98aa;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.ib-breadcrumb svg {
+  color: #596fe5;
+}
+
+.ib-page-header h1 {
+  font-size: 29px;
+  font-weight: 750;
+  margin: 0 0 7px;
+}
+
+.ib-page-header p {
+  font-size: 14px;
+  color: #929caf;
+  margin: 0;
+}
+
+.ib-header-icon {
+  width: 65px;
+  height: 65px;
+  display: grid;
+  place-items: center;
+  border-radius: 16px;
+  background: #edf0ff;
+  color: #586fe4;
+}
+
+/* Statistics */
+
+.ib-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 22px;
+}
+
+.ib-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  background: white;
+  border: 1px solid #edf0f5;
+  border-radius: 14px;
+  padding: 19px;
+  transition: 0.25s;
+}
+
+.ib-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 9px 22px rgba(20, 35, 70, 0.07);
+}
+
+.ib-stat-icon {
+  width: 45px;
+  height: 45px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+}
+
+.ib-stat-icon.blue {
+  background: #edf0ff;
+  color: #536be5;
+}
+
+.ib-stat-icon.green {
+  background: #e7f8f0;
+  color: #19a477;
+}
+
+.ib-stat-icon.orange {
+  background: #fff3e4;
+  color: #e99a3d;
+}
+
+.ib-stat-icon.purple {
+  background: #f1eaff;
+  color: #8b61d9;
+}
+
+.ib-stat-card span {
+  display: block;
+  color: #8994a8;
+  font-size: 11px;
+  margin-bottom: 5px;
+}
+
+.ib-stat-card h2 {
+  font-size: 25px;
+  font-weight: 750;
+  color: #28344b;
+  margin: 0 0 4px;
+}
+
+.ib-stat-card small {
+  color: #a0a8b6;
+  font-size: 10px;
+}
+
+/* Main layout */
+
+.ib-main-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(280px, 0.8fr);
+  align-items: start;
+  gap: 20px;
+  margin-bottom: 22px;
+}
+
+.ib-panel {
+  min-width: 0;
+  background: white;
+  border: 1px solid #edf0f5;
+  border-radius: 15px;
+  padding: 22px;
+  box-shadow: 0 3px 12px rgba(20, 35, 70, 0.025);
+}
+
+.ib-panel-heading {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 22px;
+}
+
+.ib-heading-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+  color: #536be5;
+  background: #edf0ff;
+}
+
+.ib-heading-icon.purple {
+  color: #875ed7;
+  background: #f1eaff;
+}
+
+.ib-heading-icon.green {
+  color: #1ba47a;
+  background: #e7f8f0;
+}
+
+.ib-heading-icon.blue {
+  color: #536be5;
+  background: #edf0ff;
+}
+
+.ib-panel-heading h2 {
+  font-size: 17px;
+  font-weight: 700;
+  margin: 0 0 5px;
+  color: #28344b;
+}
+
+.ib-panel-heading p {
+  font-size: 11px;
+  margin: 0;
+  color: #9aa3b2;
+}
+
+/* Form sections */
+
+.ib-section-title {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-bottom: 14px;
+}
+
+.ib-section-title > span {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 8px;
+  background: #edf0ff;
+  color: #536be5;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.ib-section-title h3 {
+  font-size: 13px;
+  font-weight: 700;
+  color: #39455d;
+  margin: 0 0 4px;
+}
+
+.ib-section-title p {
+  font-size: 11px;
+  color: #9aa3b2;
+  margin: 0;
+}
+
+.ib-second-section {
+  margin-top: 26px;
+}
+
+.ib-search-field {
+  height: 44px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 12px;
+  border: 1px solid #e8ecf3;
+  border-radius: 9px;
+  color: #8d98aa;
+  background: #fafbfe;
+}
+
+.ib-search-field:focus-within {
+  border-color: #7889e8;
+  box-shadow: 0 0 0 3px rgba(83, 105, 232, 0.08);
+}
+
+.ib-search-field input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #354158;
+  font-size: 12px;
+}
+
+/* Search result list */
+
+.ib-selection-list {
+  margin-top: 9px;
+  border: 1px solid #e9edf4;
+  border-radius: 10px;
+  overflow: hidden;
+  background: white;
+}
+
+.ib-selection-list button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  padding: 12px;
+  border: none;
+  border-bottom: 1px solid #f0f2f6;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ib-selection-list button:last-of-type {
+  border-bottom: none;
+}
+
+.ib-selection-list button:hover {
+  background: #f7f8ff;
+}
+
+.ib-selection-list button > span {
+  flex: 1;
+  min-width: 0;
+}
+
+.ib-selection-list button strong {
+  display: block;
+  color: #39455d;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.ib-selection-list button small {
+  display: block;
+  color: #9aa3b2;
+  font-size: 10px;
+}
+
+.ib-selection-list button > svg {
+  color: #9aa3b2;
+}
+
+.ib-person-avatar {
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #edf0ff;
+  color: #536be5;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 750;
+}
+
+.ib-book-result-icon {
+  width: 37px;
+  height: 37px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  background: #e9f8f2;
+  color: #1ba47a;
+  border-radius: 9px;
+}
+
+.ib-no-match {
+  padding: 15px;
+  margin: 0;
+  color: #9aa3b2;
+  text-align: center;
+  font-size: 12px;
+}
+
+/* Selected records */
+
+.ib-selected-card {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-top: 10px;
+  padding: 12px;
+  border: 1px solid #cfeee0;
+  border-radius: 10px;
+  background: #f2fbf7;
+}
+
+.ib-selected-info {
+  flex: 1;
+  min-width: 0;
+}
+
+.ib-selected-info strong {
+  display: block;
+  overflow-wrap: anywhere;
+  color: #344158;
+  font-size: 12px;
+  margin-bottom: 4px;
+}
+
+.ib-selected-info span {
+  display: block;
+  color: #8c9a9a;
+  font-size: 10px;
+}
+
+.ib-selected-card > button {
+  width: 29px;
+  height: 29px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border: none;
+  border-radius: 7px;
+  color: #7b8798;
+  background: white;
+  cursor: pointer;
+}
+
+.ib-selected-card > button:hover {
+  color: #dd6262;
+  background: #fff0ee;
+}
+
+/* Date fields */
+
+.ib-date-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.ib-form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.ib-form-group label {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #657188;
+  font-size: 11px;
+  font-weight: 650;
+}
+
+.ib-form-group label svg {
+  color: #6479df;
+}
+
+.ib-form-group input {
+  width: 100%;
+  height: 43px;
+  padding: 0 10px;
+  border: 1px solid #e8ecf3;
+  border-radius: 8px;
+  outline: none;
+  color: #4b5870;
+  background: white;
+  font-size: 12px;
+}
+
+.ib-form-group input:focus {
+  border-color: #7889e8;
+  box-shadow: 0 0 0 3px rgba(83, 105, 232, 0.08);
+}
+
+.ib-period-note {
+  display: flex;
+  align-items: flex-start;
+  gap: 9px;
+  margin-top: 16px;
+  padding: 12px;
+  background: #f4f6ff;
+  color: #7180bd;
+  border-radius: 8px;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+.ib-period-note svg {
+  flex-shrink: 0;
+}
+
+/* Messages and buttons */
+
+.ib-message {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px;
+  border-radius: 8px;
+  margin-top: 15px;
+  font-size: 11px;
+}
+
+.ib-message.error {
+  background: #fff0ed;
+  color: #d45e53;
+}
+
+.ib-message.success {
+  background: #e9f8f1;
+  color: #168d68;
+}
+
+.ib-form-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+  padding-top: 17px;
+  border-top: 1px solid #edf0f5;
+}
+
+.ib-reset-btn,
+.ib-submit-btn {
+  min-height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 0 17px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 650;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.ib-reset-btn {
+  color: #69758b;
+  background: white;
+  border: 1px solid #e5e9f1;
+}
+
+.ib-reset-btn:hover {
+  background: #f7f8fc;
+}
+
+.ib-submit-btn {
+  color: white;
+  background: linear-gradient(135deg, #536ce8, #7759db);
+  border: none;
+  box-shadow: 0 5px 12px rgba(83, 108, 232, 0.18);
+}
+
+.ib-submit-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 16px rgba(83, 108, 232, 0.27);
+}
+
+/* Side column */
+
+.ib-side-column {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.ib-guideline-list {
+  display: flex;
+  flex-direction: column;
+  gap: 17px;
+}
+
+.ib-guideline-list > div {
+  display: flex;
+  align-items: flex-start;
+  gap: 11px;
+}
+
+.ib-guide-number {
+  width: 27px;
+  height: 27px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  color: #7358ce;
+  background: #f1eaff;
+  font-size: 11px;
+  font-weight: 750;
+}
+
+.ib-guideline-list p {
+  margin: 3px 0 0;
+  color: #748096;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.ib-summary-row {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 13px 0;
+  border-bottom: 1px solid #f0f2f6;
+}
+
+.ib-summary-row span {
+  color: #9aa3b2;
+  font-size: 10px;
+}
+
+.ib-summary-row strong {
+  color: #39465d;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.ib-summary-bottom {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  margin-top: 15px;
+  padding: 12px;
+  border-radius: 8px;
+  background: #f4f6ff;
+}
+
+.ib-summary-bottom span {
+  color: #818ba2;
+  font-size: 10px;
+}
+
+.ib-summary-bottom strong {
+  color: #6477d7;
+  font-size: 10px;
+}
+
+/* Issued records table */
+
+.ib-records-panel {
+  margin-bottom: 20px;
+}
+
+.ib-records-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.ib-records-table {
+  width: 100%;
+  border-collapse: collapse;
+  white-space: nowrap;
+}
+
+.ib-records-table th {
+  padding: 13px;
+  background: #f8f9fc;
+  color: #8994a7;
+  font-size: 10px;
+  font-weight: 700;
+  text-align: left;
+  text-transform: uppercase;
+}
+
+.ib-records-table td {
+  padding: 14px 13px;
+  border-bottom: 1px solid #f0f2f6;
+  color: #68748a;
+  font-size: 11px;
+}
+
+.ib-records-table td strong,
+.ib-records-table td small {
+  display: block;
+}
+
+.ib-records-table td strong {
+  color: #3b4760;
+  font-size: 11px;
+}
+
+.ib-records-table td small {
+  margin-top: 4px;
+  color: #9ba4b3;
+  font-size: 10px;
+}
+
+.ib-record-id {
+  color: #6176df !important;
+  font-weight: 700;
+}
+
+.ib-record-status {
+  display: inline-block;
+  padding: 5px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 650;
+}
+
+.ib-record-status.issued {
+  color: #536bdc;
+  background: #edf0ff;
+}
+
+.ib-record-status.overdue {
+  color: #d98935;
+  background: #fff3e4;
+}
+
+/* Responsive */
+
+@media (max-width: 1100px) {
+  .ib-stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .ib-main-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ib-side-column {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .issue-books-page {
+    padding: 16px;
+  }
+
+  .ib-page-header h1 {
+    font-size: 24px;
+  }
+
+  .ib-header-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  .ib-stats-grid {
+    gap: 10px;
+  }
+
+  .ib-stat-card {
+    padding: 12px;
+    gap: 8px;
+  }
+
+  .ib-stat-icon {
+    width: 37px;
+    height: 37px;
+  }
+
+  .ib-stat-card h2 {
+    font-size: 21px;
+  }
+
+  .ib-stat-card span {
+    font-size: 10px;
+  }
+
+  .ib-panel {
+    padding: 15px;
+  }
+
+  .ib-side-column {
+    grid-template-columns: 1fr;
+  }
+
+  .ib-date-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ib-form-actions {
+    flex-direction: column-reverse;
+  }
+
+  .ib-form-actions button {
+    width: 100%;
+  }
+}
+
+@media (max-width: 390px) {
+  .ib-stats-grid {
+    grid-template-columns: 1fr;
+  }
+}

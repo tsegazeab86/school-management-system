@@ -1,0 +1,321 @@
+.registrar-header {
+  width: 100%;
+  min-height: 90px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  padding: 15px 25px;
+  margin-bottom: 25px;
+  background: rgba(255, 255, 255, 0.88);
+  border: 1px solid #e9eaf3;
+  border-radius: 18px;
+  box-shadow: 0 5px 20px rgba(32, 35, 80, 0.05);
+  position: relative;
+  z-index: 20;
+}
+
+.registrar-header-left,
+.registrar-header-right {
+  display: flex;
+  align-items: center;
+}
+
+.registrar-header-left {
+  gap: 15px;
+  min-width: 0;
+}
+
+.registrar-page-heading h1 {
+  color: #202044;
+  font-size: 24px;
+  font-weight: 700;
+  margin: 0 0 6px;
+}
+
+.registrar-page-heading p {
+  color: #85869b;
+  font-size: 13px;
+  margin: 0;
+}
+
+.registrar-header-right {
+  gap: 17px;
+}
+
+.registrar-search {
+  width: 230px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 13px;
+  background: #f5f5fa;
+  border: 1px solid #ececf4;
+  border-radius: 12px;
+  color: #85869b;
+}
+
+.registrar-search input {
+  width: 100%;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #292943;
+  font-size: 13px;
+}
+
+.registrar-search-clear {
+  display: flex;
+  align-items: center;
+  border: none;
+  background: transparent;
+  color: #85869b;
+  cursor: pointer;
+}
+
+.registrar-header-dropdown {
+  position: relative;
+}
+
+.registrar-icon-button {
+  width: 43px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  color: #555574;
+  background: #f5f5fa;
+  border: 1px solid #ececf4;
+  border-radius: 12px;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.registrar-icon-button:hover,
+.registrar-icon-button.active {
+  color: #7045d6;
+  background: #f0eaff;
+}
+
+.registrar-notification-dot {
+  width: 8px;
+  height: 8px;
+  position: absolute;
+  top: 9px;
+  right: 10px;
+  background: #ed526b;
+  border: 2px solid white;
+  border-radius: 50%;
+}
+
+.registrar-profile-button {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 5px 8px;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  color: #77778e;
+}
+
+.registrar-avatar {
+  width: 42px;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: 17px;
+  font-weight: 700;
+  background: linear-gradient(135deg, #5742c5, #a05be7);
+  border-radius: 13px;
+}
+
+.registrar-profile-info {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 4px;
+}
+
+.registrar-profile-info strong {
+  color: #292943;
+  font-size: 13px;
+}
+
+.registrar-profile-info span {
+  color: #9292a5;
+  font-size: 11px;
+}
+
+.registrar-dropdown {
+  position: absolute;
+  top: calc(100% + 13px);
+  right: 0;
+  width: 310px;
+  background: white;
+  border: 1px solid #eeeeF5;
+  border-radius: 15px;
+  box-shadow: 0 12px 35px rgba(31, 30, 75, 0.13);
+  overflow: hidden;
+  z-index: 100;
+}
+
+.registrar-dropdown-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 17px;
+  border-bottom: 1px solid #eeeeF5;
+}
+
+.registrar-dropdown-heading h3 {
+  margin: 0;
+  font-size: 15px;
+  color: #292943;
+}
+
+.registrar-dropdown-heading span {
+  font-size: 11px;
+  color: #7045d6;
+  background: #f1ebff;
+  padding: 5px 9px;
+  border-radius: 20px;
+}
+
+.registrar-notification-item {
+  display: flex;
+  gap: 12px;
+  padding: 14px 16px;
+  border-bottom: 1px solid #f0f0f5;
+}
+
+.notification-icon {
+  width: 34px;
+  height: 34px;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #7045d6;
+  background: #f1ebff;
+  border-radius: 10px;
+}
+
+.registrar-notification-item h4 {
+  margin: 0 0 5px;
+  color: #292943;
+  font-size: 12px;
+}
+
+.registrar-notification-item p {
+  margin: 0 0 5px;
+  color: #85869b;
+  font-size: 11px;
+  line-height: 1.5;
+}
+
+.registrar-notification-item small {
+  color: #a0a0b0;
+  font-size: 10px;
+}
+
+.registrar-profile-dropdown {
+  width: 190px;
+  padding: 7px;
+}
+
+.registrar-profile-dropdown button {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 11px;
+  color: #555574;
+  background: transparent;
+  border: none;
+  border-radius: 9px;
+  text-align: left;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.registrar-profile-dropdown button:hover {
+  color: #7045d6;
+  background: #f5f1ff;
+}
+
+.registrar-profile-dropdown .registrar-logout-option {
+  color: #e34e64;
+  border-top: 1px solid #eeeeF5;
+  border-radius: 0 0 9px 9px;
+}
+
+.registrar-mobile-menu {
+  display: none;
+  width: 40px;
+  height: 40px;
+  align-items: center;
+  justify-content: center;
+  color: #555574;
+  background: #f5f5fa;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .registrar-search {
+    width: 180px;
+  }
+
+  .registrar-header {
+    padding: 14px 17px;
+  }
+}
+
+@media (max-width: 650px) {
+  .registrar-header {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .registrar-header-left,
+  .registrar-header-right {
+    width: 100%;
+  }
+
+  .registrar-header-right {
+    justify-content: space-between;
+  }
+
+  .registrar-search {
+    flex: 1;
+    width: auto;
+  }
+
+  .registrar-mobile-menu {
+    display: flex;
+  }
+
+  .registrar-page-heading h1 {
+    font-size: 20px;
+  }
+
+  .registrar-page-heading p {
+    font-size: 11px;
+  }
+
+  .registrar-profile-info {
+    display: none;
+  }
+
+  .registrar-dropdown {
+    max-width: calc(100vw - 30px);
+  }
+}

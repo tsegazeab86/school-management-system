@@ -1,0 +1,1030 @@
+
+.student-fees-page {
+  --fees-navy: #101b35;
+  --fees-blue: #2475e8;
+  --fees-cyan: #27c4d9;
+  --fees-gold: #f4c76a;
+  --fees-text: #25324b;
+  --fees-muted: #8994a8;
+  --fees-border: #e9edf4;
+  background: #f4f6fa;
+  min-height: 100vh;
+  padding: 30px;
+  color: var(--fees-text);
+  font-family: inherit;
+}
+
+/* Header */
+.fees-topbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  margin-bottom: 27px;
+}
+
+.fees-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #2475e8;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 1.7px;
+  margin-bottom: 9px;
+}
+
+.fees-topbar h1 {
+  color: var(--fees-navy);
+  font-size: 29px;
+  font-weight: 800;
+  margin: 0 0 7px;
+  letter-spacing: -0.8px;
+}
+
+.fees-topbar p {
+  color: var(--fees-muted);
+  margin: 0;
+  font-size: 13px;
+}
+
+.fees-academic-badge {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  background: white;
+  border: 1px solid var(--fees-border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  color: #52617b;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+/* Overview cards */
+.fees-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin-bottom: 22px;
+}
+
+.fees-overview-card {
+  min-height: 165px;
+  padding: 22px 23px;
+  border-radius: 15px;
+  position: relative;
+  overflow: hidden;
+  color: white;
+  transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.fees-overview-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 13px 28px rgba(16, 27, 53, 0.16);
+}
+
+.fees-total-card {
+  background: linear-gradient(120deg, #142342, #243e68);
+}
+
+.fees-paid-card {
+  background: linear-gradient(120deg, #087f91, #13aeb5);
+}
+
+.fees-balance-card {
+  background: linear-gradient(120deg, #a36c1a, #d69a37);
+}
+
+.fees-card-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: relative;
+  z-index: 1;
+  font-size: 12px;
+  font-weight: 600;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+.fees-icon-box {
+  width: 38px;
+  height: 38px;
+  display: grid;
+  place-items: center;
+  border-radius: 10px;
+  background: rgba(255, 255, 255, 0.14);
+}
+
+.fees-overview-card h2 {
+  position: relative;
+  z-index: 1;
+  font-size: clamp(21px, 2vw, 27px);
+  font-weight: 800;
+  margin: 15px 0 5px;
+  letter-spacing: -0.7px;
+}
+
+.fees-overview-card p {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-size: 11px;
+  color: rgba(255, 255, 255, 0.76);
+}
+
+.fees-card-decoration {
+  position: absolute;
+  right: 18px;
+  bottom: -15px;
+  color: rgba(255, 255, 255, 0.09);
+  font-size: 64px;
+  font-weight: 900;
+}
+
+/* Main panels */
+.fees-panel {
+  background: #fff;
+  border: 1px solid var(--fees-border);
+  border-radius: 14px;
+  padding: 23px;
+  box-shadow: 0 4px 16px rgba(27, 44, 76, 0.025);
+}
+
+.fees-middle-row {
+  margin-bottom: 22px;
+}
+
+.fees-panel-title {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 23px;
+}
+
+.fees-section-label {
+  display: block;
+  color: #8994a8;
+  font-size: 9px;
+  letter-spacing: 1.5px;
+  font-weight: 800;
+  margin-bottom: 7px;
+}
+
+.fees-panel-title h3,
+.fees-student-panel h3 {
+  color: var(--fees-navy);
+  font-size: 17px;
+  font-weight: 800;
+  margin: 0 0 5px;
+}
+
+.fees-panel-title p {
+  color: var(--fees-muted);
+  font-size: 11px;
+  margin: 0;
+}
+
+.fees-progress-icon {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  color: #147c98;
+  background: #e9f9fa;
+  border-radius: 9px;
+}
+
+/* Payment progress */
+.fees-progress-amounts {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  margin-bottom: 12px;
+}
+
+.fees-progress-amounts div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fees-progress-amounts small {
+  color: var(--fees-muted);
+  font-size: 10px;
+}
+
+.fees-progress-amounts strong {
+  color: var(--fees-navy);
+  font-size: 15px;
+  font-weight: 800;
+}
+
+.fees-progress-track {
+  height: 11px;
+  border-radius: 20px;
+  background: #edf0f5;
+  overflow: hidden;
+}
+
+.fees-progress-fill {
+  height: 100%;
+  border-radius: 20px;
+  background: linear-gradient(90deg, #10a9b9, #38d5c0);
+  transition: width 0.6s ease;
+}
+
+.fees-progress-footer {
+  display: flex;
+  justify-content: space-between;
+  margin-top: 9px;
+  font-size: 10px;
+  font-weight: 700;
+  color: #65738b;
+}
+
+.fees-deadline-box {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 13px;
+  background: #f7f9fc;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  margin-top: 25px;
+}
+
+.fees-deadline-icon {
+  display: grid;
+  place-items: center;
+  width: 36px;
+  height: 36px;
+  flex-shrink: 0;
+  color: #b57b19;
+  background: #fff2d9;
+  border-radius: 9px;
+}
+
+.fees-deadline-box strong {
+  color: var(--fees-navy);
+  font-size: 11px;
+}
+
+.fees-deadline-box p {
+  margin: 3px 0 0;
+  color: #8994a8;
+  font-size: 10px;
+}
+
+.fees-due-label {
+  margin-left: auto;
+  white-space: nowrap;
+  color: #a16b15;
+  background: #fff0d1;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 800;
+}
+
+/* Student account */
+.fees-student-panel {
+  background: linear-gradient(145deg, #142440, #203b62);
+  border: none;
+  color: white;
+}
+
+.fees-student-panel .fees-section-label {
+  color: #8ca9ce;
+}
+
+.fees-student-panel h3 {
+  color: white;
+}
+
+.fees-student-panel p {
+  color: #aabbd3;
+  font-size: 10px;
+  margin: 0;
+}
+
+.fees-student-panel-top {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding-bottom: 20px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.13);
+}
+
+.fees-student-avatar {
+  width: 49px;
+  height: 49px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 13px;
+  background: linear-gradient(135deg, #f2c66c, #e99e35);
+  color: #172642;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.fees-student-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 12px;
+  padding: 20px 0;
+}
+
+.fees-student-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fees-student-details span {
+  color: #8da5c4;
+  font-size: 9px;
+}
+
+.fees-student-details strong {
+  color: #f0f5ff;
+  font-size: 11px;
+}
+
+.fees-student-details .fees-account-status {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.fees-account-status span {
+  width: 7px;
+  height: 7px;
+  background: #38d6a3;
+  border-radius: 50%;
+}
+
+.fees-secure-note {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding-top: 13px;
+  border-top: 1px solid rgba(255, 255, 255, 0.13);
+  color: #a9c3df;
+  font-size: 10px;
+}
+
+/* Fee breakdown */
+.fees-breakdown-panel {
+  margin-bottom: 22px;
+}
+
+.fees-item-count,
+.fees-history-total {
+  color: #6d7d95;
+  background: #f2f5fa;
+  border-radius: 8px;
+  padding: 8px 11px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.fees-breakdown-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.fees-breakdown-item {
+  display: grid;
+  grid-template-columns: 42px minmax(130px, 1.5fr) minmax(100px, 1fr) minmax(120px, 1fr) 75px;
+  align-items: center;
+  gap: 15px;
+  padding: 15px 5px;
+  border-bottom: 1px solid #f0f2f6;
+  transition: background 0.2s ease;
+}
+
+.fees-breakdown-item:last-child {
+  border-bottom: none;
+}
+
+.fees-breakdown-item:hover {
+  background: #fafbfd;
+}
+
+.fees-item-icon {
+  width: 40px;
+  height: 40px;
+  display: grid;
+  place-items: center;
+  border-radius: 11px;
+}
+
+.fees-item-icon.blue {
+  background: #e8f1ff;
+  color: #2875dc;
+}
+
+.fees-item-icon.purple {
+  background: #f1eaff;
+  color: #8656d6;
+}
+
+.fees-item-icon.orange {
+  background: #fff1e5;
+  color: #dc8938;
+}
+
+.fees-item-icon.green {
+  background: #e6f8ef;
+  color: #219d6b;
+}
+
+.fees-item-info {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fees-item-info strong {
+  color: var(--fees-navy);
+  font-size: 12px;
+}
+
+.fees-item-info span {
+  color: var(--fees-muted);
+  font-size: 10px;
+}
+
+.fees-item-progress {
+  min-width: 0;
+}
+
+.fees-mini-track {
+  height: 6px;
+  background: #edf0f5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.fees-mini-fill {
+  height: 100%;
+  border-radius: 10px;
+}
+
+.fees-mini-fill.blue {
+  background: #2875dc;
+}
+
+.fees-mini-fill.purple {
+  background: #8656d6;
+}
+
+.fees-mini-fill.orange {
+  background: #dc8938;
+}
+
+.fees-mini-fill.green {
+  background: #219d6b;
+}
+
+.fees-item-progress small {
+  display: block;
+  margin-top: 5px;
+  color: #8994a8;
+  font-size: 9px;
+}
+
+.fees-item-money {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fees-item-money strong {
+  color: var(--fees-navy);
+  font-size: 12px;
+}
+
+.fees-item-money span {
+  color: #8994a8;
+  font-size: 9px;
+}
+
+.fees-status-pill {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 9px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.fees-status-pill.paid {
+  background: #e7f8ef;
+  color: #178451;
+}
+
+.fees-status-pill.pending {
+  background: #fff4df;
+  color: #ad741b;
+}
+
+/* History */
+.fees-history-heading {
+  align-items: center;
+}
+
+.fees-history-total {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.fees-table-tools {
+  display: flex;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 17px;
+}
+
+.fees-search-box {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  width: min(370px, 100%);
+  padding: 0 12px;
+  height: 39px;
+  border: 1px solid var(--fees-border);
+  border-radius: 8px;
+  color: #8994a8;
+}
+
+.fees-search-box:focus-within {
+  border-color: #3988e8;
+  box-shadow: 0 0 0 3px rgba(57, 136, 232, 0.08);
+}
+
+.fees-search-box input {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: var(--fees-text);
+  background: transparent;
+  font-size: 11px;
+}
+
+.fees-search-box input::placeholder {
+  color: #a4adbc;
+}
+
+.fees-filter-select {
+  height: 39px;
+  min-width: 145px;
+  border: 1px solid var(--fees-border);
+  border-radius: 8px;
+  padding: 0 12px;
+  color: #52617b;
+  outline: none;
+  background: white;
+  font-size: 11px;
+}
+
+.fees-table {
+  margin-bottom: 0;
+  white-space: nowrap;
+}
+
+.fees-table thead th {
+  padding: 13px 12px;
+  background: #f7f9fc;
+  border-bottom: 1px solid #e9edf4;
+  color: #8b97aa;
+  font-size: 9px;
+  letter-spacing: 0.7px;
+  font-weight: 800;
+}
+
+.fees-table tbody td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #f0f2f6;
+  color: #69778d;
+  font-size: 10px;
+}
+
+.fees-table tbody tr:hover {
+  background: #fafcff;
+}
+
+.fees-receipt-id {
+  color: #286fc5;
+  font-size: 10px;
+}
+
+.fees-method {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  color: #64728a;
+}
+
+.fees-view-btn {
+  width: 30px;
+  height: 30px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e5eaf2;
+  border-radius: 7px;
+  background: white;
+  color: #3978c8;
+  transition: all 0.2s ease;
+}
+
+.fees-view-btn:hover {
+  color: white;
+  background: #2475e8;
+  border-color: #2475e8;
+  transform: translateY(-2px);
+}
+
+.fees-empty-state {
+  text-align: center;
+  padding: 35px !important;
+  color: #8994a8 !important;
+}
+
+.fees-table-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 10px;
+  padding-top: 14px;
+  color: #8994a8;
+  font-size: 10px;
+}
+
+/* Demo notice */
+.fees-demo-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  margin-top: 20px;
+  padding: 15px 17px;
+  border: 1px solid #f1dfb6;
+  border-radius: 10px;
+  background: #fffaf0;
+}
+
+.fees-notice-icon {
+  color: #b67c1f;
+  padding-top: 2px;
+}
+
+.fees-demo-notice strong {
+  display: block;
+  color: #79561d;
+  font-size: 11px;
+  margin-bottom: 4px;
+}
+
+.fees-demo-notice p {
+  margin: 0;
+  color: #91784f;
+  font-size: 10px;
+  line-height: 1.6;
+}
+
+/* Receipt modal */
+.fees-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 9999;
+  background: rgba(11, 22, 42, 0.66);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+.fees-receipt-modal {
+  width: min(490px, 100%);
+  max-height: 92vh;
+  overflow-y: auto;
+  background: white;
+  border-radius: 15px;
+  box-shadow: 0 25px 80px rgba(0, 0, 0, 0.25);
+}
+
+.fees-modal-actions {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px 21px;
+  background: #f6f8fc;
+  border-bottom: 1px solid #edf0f5;
+}
+
+.fees-modal-actions span {
+  color: #64738b;
+  font-size: 10px;
+  letter-spacing: 1.2px;
+  font-weight: 800;
+}
+
+.fees-modal-actions button {
+  display: grid;
+  place-items: center;
+  border: none;
+  background: transparent;
+  color: #68758a;
+  cursor: pointer;
+}
+
+.fees-receipt-content {
+  padding: 25px;
+}
+
+.fees-receipt-brand {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding-bottom: 20px;
+  border-bottom: 1px dashed #dce3ed;
+}
+
+.fees-receipt-logo {
+  width: 45px;
+  height: 45px;
+  display: grid;
+  place-items: center;
+  color: white;
+  background: #18375d;
+  border-radius: 12px;
+}
+
+.fees-receipt-brand h2 {
+  margin: 0 0 4px;
+  color: #172b4d;
+  font-size: 15px;
+  font-weight: 900;
+}
+
+.fees-receipt-brand p {
+  margin: 0;
+  color: #8793a6;
+  font-size: 10px;
+}
+
+.fees-receipt-success {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  gap: 5px;
+  padding: 22px 0 16px;
+  color: #15966b;
+}
+
+.fees-receipt-success strong {
+  color: #1a3454;
+  font-size: 14px;
+}
+
+.fees-receipt-success span {
+  color: #8a96a8;
+  font-size: 10px;
+}
+
+.fees-receipt-amount {
+  padding: 16px;
+  text-align: center;
+  background: #f2f8ff;
+  border: 1px solid #e0edfb;
+  border-radius: 10px;
+}
+
+.fees-receipt-amount span {
+  display: block;
+  color: #8492a7;
+  font-size: 10px;
+  margin-bottom: 6px;
+}
+
+.fees-receipt-amount strong {
+  color: #1d5eae;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.fees-receipt-details {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 18px 12px;
+  padding: 21px 0;
+}
+
+.fees-receipt-details div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.fees-receipt-details span {
+  color: #8b97a8;
+  font-size: 9px;
+}
+
+.fees-receipt-details strong {
+  color: #2b3a54;
+  font-size: 10px;
+  overflow-wrap: anywhere;
+}
+
+.fees-receipt-footer {
+  padding: 12px;
+  background: #fff8eb;
+  border-radius: 7px;
+  color: #98733b;
+  text-align: center;
+  font-size: 9px;
+  line-height: 1.6;
+}
+
+.fees-receipt-buttons {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  padding: 15px 21px;
+  border-top: 1px solid #edf0f5;
+}
+
+.fees-close-btn,
+.fees-print-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 10px 15px;
+  border-radius: 8px;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.fees-close-btn {
+  color: #63718a;
+  border: 1px solid #e4e9f1;
+  background: white;
+}
+
+.fees-print-btn {
+  color: white;
+  border: 1px solid #18375d;
+  background: #18375d;
+}
+
+.fees-close-btn:hover {
+  background: #f5f7fa;
+}
+
+.fees-print-btn:hover {
+  background: #285584;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .fees-breakdown-item {
+    grid-template-columns: 42px minmax(110px, 1.3fr) minmax(90px, 1fr) 110px;
+  }
+
+  .fees-item-progress {
+    display: none;
+  }
+}
+
+@media (max-width: 768px) {
+  .student-fees-page {
+    padding: 18px;
+  }
+
+  .fees-topbar {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .fees-overview-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .fees-overview-card {
+    min-height: 145px;
+  }
+
+  .fees-panel {
+    padding: 17px;
+  }
+
+  .fees-breakdown-item {
+    grid-template-columns: 40px 1fr auto;
+    gap: 10px;
+  }
+
+  .fees-item-money {
+    grid-column: 2;
+  }
+
+  .fees-breakdown-item > .fees-status-pill {
+    grid-column: 3;
+    grid-row: 1;
+  }
+
+  .fees-table-tools {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .fees-search-box {
+    width: 100%;
+  }
+
+  .fees-filter-select {
+    width: 100%;
+  }
+
+  .fees-history-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+}
+
+@media (max-width: 480px) {
+  .student-fees-page {
+    padding: 13px;
+  }
+
+  .fees-topbar h1 {
+    font-size: 24px;
+  }
+
+  .fees-student-details {
+    grid-template-columns: 1fr 1fr;
+  }
+
+  .fees-progress-amounts strong {
+    font-size: 12px;
+  }
+
+  .fees-table-footer {
+    flex-direction: column;
+  }
+
+  .fees-receipt-content {
+    padding: 17px;
+  }
+
+  .fees-receipt-details {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* Print only the receipt */
+@media print {
+  body * {
+    visibility: hidden !important;
+  }
+
+  .fees-receipt-modal,
+  .fees-receipt-modal * {
+    visibility: visible !important;
+  }
+
+  .fees-modal-overlay {
+    position: absolute;
+    inset: 0;
+    display: block;
+    padding: 0;
+    background: white;
+    overflow: visible;
+  }
+
+  .fees-receipt-modal {
+    width: 100%;
+    max-height: none;
+    overflow: visible;
+    box-shadow: none;
+    border-radius: 0;
+  }
+
+  .no-print {
+    display: none !important;
+  }
+
+  .fees-receipt-content {
+    padding: 25px;
+  }
+}

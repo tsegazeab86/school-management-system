@@ -1,0 +1,476 @@
+
+.staff-reports-page {
+    color: #30334b;
+}
+
+.staff-reports-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 15px;
+    margin-bottom: 22px;
+}
+
+.staff-reports-eyebrow {
+    color: #7059d5;
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: 1.4px;
+}
+
+.staff-reports-heading h2 {
+    margin: 7px 0;
+    font-size: 27px;
+}
+
+.staff-reports-heading p {
+    margin: 0;
+    color: #9295a5;
+    font-size: 13px;
+}
+
+.staff-report-export {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 12px 17px;
+    border: 0;
+    border-radius: 9px;
+    background: linear-gradient(135deg, #7059d5, #4936a5);
+    color: white;
+    font-weight: 650;
+    cursor: pointer;
+}
+
+.staff-report-period {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 18px;
+    margin-bottom: 19px;
+    border: 1px solid #ecebf4;
+    border-radius: 12px;
+    background: white;
+}
+
+.staff-report-period div {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #666980;
+    font-size: 13px;
+    font-weight: 650;
+}
+
+.staff-report-period svg {
+    color: #7059d5;
+}
+
+.staff-report-period select,
+.staff-report-filters select {
+    min-height: 39px;
+    padding: 0 12px;
+    border: 1px solid #e8e7f0;
+    border-radius: 8px;
+    outline: none;
+    background: white;
+    color: #555970;
+    font-size: 12px;
+}
+
+.staff-report-stat-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 19px;
+}
+
+.staff-report-stat {
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 19px 16px;
+    border: 1px solid #eeedf4;
+    border-radius: 13px;
+    background: white;
+    box-shadow: 0 5px 20px #25234b06;
+}
+
+.staff-report-stat-icon {
+    width: 44px;
+    height: 44px;
+    display: grid;
+    flex-shrink: 0;
+    place-items: center;
+    border-radius: 12px;
+}
+
+.staff-report-stat-icon svg {
+    width: 22px;
+}
+
+.staff-report-stat span {
+    color: #9295a5;
+    font-size: 11px;
+}
+
+.staff-report-stat h3 {
+    margin: 5px 0 3px;
+    font-size: 25px;
+}
+
+.staff-report-stat small {
+    color: #a1a2b0;
+    font-size: 10px;
+}
+
+.staff-report-stat.purple .staff-report-stat-icon {
+    background: #f0edff;
+    color: #7059d5;
+}
+
+.staff-report-stat.green .staff-report-stat-icon {
+    background: #e9f8ef;
+    color: #29a568;
+}
+
+.staff-report-stat.red .staff-report-stat-icon {
+    background: #fff0f0;
+    color: #e05252;
+}
+
+.staff-report-stat.orange .staff-report-stat-icon {
+    background: #fff5e8;
+    color: #d99536;
+}
+
+/* Overview */
+.staff-report-overview {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.staff-report-overview-card {
+    padding: 20px;
+    border: 1px solid #eeedf4;
+    border-radius: 13px;
+    background: white;
+}
+
+.staff-report-overview-heading {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #85889b;
+    font-size: 12px;
+}
+
+.overview-icon {
+    width: 36px;
+    height: 36px;
+    display: grid;
+    place-items: center;
+    border-radius: 10px;
+    background: #f0edff;
+    color: #7059d5;
+}
+
+.staff-report-overview-card h3 {
+    margin: 17px 0 8px;
+    font-size: 25px;
+}
+
+.staff-report-overview-card h3 small {
+    color: #9295a5;
+    font-size: 12px;
+    font-weight: 500;
+}
+
+.staff-report-overview-card p {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin: 0;
+    color: #9295a5;
+    font-size: 11px;
+}
+
+/* Attendance summary */
+.staff-report-attendance-card,
+.staff-report-table-card {
+    padding: 21px;
+    margin-bottom: 20px;
+    border: 1px solid #eeedf4;
+    border-radius: 14px;
+    background: white;
+    box-shadow: 0 5px 20px #25234b06;
+}
+
+.staff-report-section-heading,
+.staff-report-table-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 23px;
+}
+
+.staff-report-section-heading h3,
+.staff-report-table-heading h3 {
+    margin: 0 0 6px;
+    font-size: 16px;
+}
+
+.staff-report-section-heading p,
+.staff-report-table-heading p {
+    margin: 0;
+    color: #999bad;
+    font-size: 11px;
+}
+
+.staff-report-section-heading > span {
+    padding: 7px 11px;
+    border-radius: 20px;
+    background: #f0edff;
+    color: #7059d5;
+    font-size: 11px;
+    font-weight: 700;
+}
+
+.staff-report-progress-list {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+}
+
+.staff-progress-item > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8px;
+    font-size: 12px;
+}
+
+.staff-progress-item > div:first-child span {
+    color: #777b91;
+}
+
+.staff-progress-item > div:first-child strong {
+    color: #30334b;
+}
+
+.staff-progress-track {
+    height: 9px;
+    overflow: hidden;
+    border-radius: 20px;
+    background: #f0eff5;
+}
+
+.staff-progress-fill {
+    height: 100%;
+    border-radius: 20px;
+    transition: width .3s ease;
+}
+
+.present-fill {
+    background: #35b77a;
+}
+
+.absent-fill {
+    background: #e65c66;
+}
+
+.late-fill {
+    background: #e9a342;
+}
+
+/* Table */
+.staff-report-table-heading > svg {
+    color: #7059d5;
+}
+
+.staff-report-filters {
+    display: flex;
+    gap: 10px;
+    margin-bottom: 17px;
+}
+
+.staff-report-search {
+    min-width: 200px;
+    flex: 1;
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    padding: 0 12px;
+    border: 1px solid #e8e7f0;
+    border-radius: 8px;
+    background: white;
+    color: #9295a5;
+}
+
+.staff-report-search input {
+    width: 100%;
+    height: 39px;
+    border: 0;
+    outline: none;
+    background: transparent;
+    color: #30334b;
+    font-size: 12px;
+}
+
+.staff-report-table-wrap {
+    width: 100%;
+    overflow-x: auto;
+}
+
+.staff-report-table {
+    width: 100%;
+    min-width: 780px;
+    border-collapse: collapse;
+    text-align: left;
+}
+
+.staff-report-table th {
+    padding: 14px 12px;
+    background: #f8f7fc;
+    color: #85889b;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+}
+
+.staff-report-table td {
+    padding: 14px 12px;
+    border-bottom: 1px solid #f0eff5;
+    color: #666980;
+    font-size: 11px;
+    white-space: nowrap;
+}
+
+.staff-report-person {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.staff-report-person img {
+    width: 39px;
+    height: 39px;
+    flex-shrink: 0;
+    border: 2px solid #eeeaff;
+    border-radius: 50%;
+    object-fit: cover;
+    background: #f0edff;
+}
+
+.staff-report-person strong {
+    display: block;
+    margin-bottom: 4px;
+    color: #30334b;
+    font-size: 12px;
+}
+
+.staff-report-person small {
+    color: #999bad;
+    font-size: 10px;
+}
+
+.staff-report-status {
+    display: inline-block;
+    padding: 6px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.staff-report-status.present {
+    background: #e9f8ef;
+    color: #269b60;
+}
+
+.staff-report-status.absent {
+    background: #fff0f0;
+    color: #dc5353;
+}
+
+.staff-report-status.late {
+    background: #fff5e8;
+    color: #d18c2f;
+}
+
+.staff-report-no-data {
+    padding: 35px !important;
+    color: #999bad !important;
+    text-align: center;
+}
+
+.staff-report-table-footer {
+    display: flex;
+    justify-content: space-between;
+    gap: 10px;
+    padding-top: 16px;
+    color: #999bad;
+    font-size: 11px;
+}
+
+.staff-report-table-footer span:last-child {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+    .staff-report-stat-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 700px) {
+    .staff-reports-heading {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .staff-report-overview {
+        grid-template-columns: 1fr;
+    }
+
+    .staff-report-filters {
+        flex-direction: column;
+    }
+
+    .staff-report-search {
+        min-height: 40px;
+    }
+
+    .staff-report-filters select {
+        width: 100%;
+    }
+
+    .staff-report-table-footer {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 480px) {
+    .staff-report-stat-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .staff-report-period {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    .staff-report-period select {
+        width: 100%;
+    }
+
+    .staff-report-attendance-card,
+    .staff-report-table-card {
+        padding: 14px;
+    }
+}

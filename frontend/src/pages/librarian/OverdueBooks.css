@@ -1,0 +1,530 @@
+
+.overdue-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f5f7fb;
+  color: #172033;
+  font-family: Arial, sans-serif;
+}
+
+.overdue-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.overdue-eyebrow {
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: 1.5px;
+}
+
+.overdue-header h2 {
+  margin: 7px 0;
+  font-size: 29px;
+  font-weight: 750;
+}
+
+.overdue-header p,
+.overdue-section-heading p {
+  margin: 0;
+  color: #7b8495;
+  font-size: 14px;
+}
+
+.overdue-export-btn {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 12px 17px;
+  border: none;
+  border-radius: 9px;
+  background: #2459c5;
+  color: white;
+  font-size: 13px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.overdue-export-btn:hover {
+  background: #17449f;
+  transform: translateY(-1px);
+}
+
+.overdue-alert {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+  margin-bottom: 23px;
+  background: #fff8eb;
+  border: 1px solid #f7dfb1;
+  border-radius: 12px;
+}
+
+.overdue-alert-icon {
+  width: 42px;
+  height: 42px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  color: #c47b12;
+  background: #ffedcc;
+  border-radius: 10px;
+}
+
+.overdue-alert strong {
+  color: #89550d;
+  font-size: 14px;
+}
+
+.overdue-alert p {
+  margin: 5px 0 0;
+  color: #9b743b;
+  font-size: 12px;
+}
+
+.overdue-stats {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 24px;
+}
+
+.overdue-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px 17px;
+  background: white;
+  border: 1px solid #edf0f5;
+  border-radius: 14px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.035);
+}
+
+.overdue-stat-icon {
+  width: 47px;
+  height: 47px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+}
+
+.overdue-stat-icon.blue {
+  color: #2563eb;
+  background: #eaf1ff;
+}
+
+.overdue-stat-icon.purple {
+  color: #7c3aed;
+  background: #f2edff;
+}
+
+.overdue-stat-icon.green {
+  color: #059669;
+  background: #e9f9f2;
+}
+
+.overdue-stat-icon.red {
+  color: #dc2626;
+  background: #fff0f0;
+}
+
+.overdue-stat-card span {
+  color: #667085;
+  font-size: 13px;
+}
+
+.overdue-stat-card h3 {
+  margin: 5px 0 3px;
+  font-size: 25px;
+  font-weight: 750;
+}
+
+.overdue-stat-card small {
+  color: #98a1b1;
+  font-size: 11px;
+}
+
+.overdue-table-card {
+  padding: 23px;
+  background: white;
+  border: 1px solid #edf0f5;
+  border-radius: 15px;
+  box-shadow: 0 3px 12px rgba(15, 23, 42, 0.035);
+}
+
+.overdue-section-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 21px;
+}
+
+.overdue-section-heading h3 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  font-weight: 700;
+}
+
+.overdue-count {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #fff0ef;
+  color: #c24135;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.overdue-toolbar {
+  display: flex;
+  align-items: center;
+  gap: 11px;
+  margin-bottom: 20px;
+}
+
+.overdue-search,
+.overdue-filter {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #e2e7ef;
+  border-radius: 9px;
+  background: white;
+  color: #8290a4;
+}
+
+.overdue-search {
+  flex: 1;
+}
+
+.overdue-search input,
+.overdue-filter select {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #334155;
+  font-size: 12px;
+}
+
+.overdue-filter {
+  min-width: 155px;
+}
+
+.overdue-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.overdue-table {
+  width: 100%;
+  min-width: 900px;
+  border-collapse: collapse;
+}
+
+.overdue-table th {
+  padding: 14px 12px;
+  background: #f8fafc;
+  color: #738096;
+  text-align: left;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+.overdue-table td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #edf0f4;
+  color: #526075;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.overdue-table tbody tr:hover {
+  background: #fffafa;
+}
+
+.overdue-id {
+  color: #315fca;
+}
+
+.overdue-student {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  min-width: 150px;
+}
+
+.overdue-avatar {
+  width: 34px;
+  height: 34px;
+  display: grid;
+  place-items: center;
+  flex-shrink: 0;
+  border-radius: 50%;
+  background: #fff0ef;
+  color: #c24135;
+  font-weight: 700;
+}
+
+.overdue-student strong,
+.overdue-book-title {
+  display: block;
+  color: #263247;
+  font-size: 12px;
+}
+
+.overdue-student small,
+.overdue-category {
+  display: block;
+  margin-top: 4px;
+  color: #929bad;
+  font-size: 10px;
+}
+
+.overdue-days {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  color: #dc2626;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.overdue-reminder {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  padding: 6px 9px;
+  border-radius: 20px;
+  font-size: 10px;
+  font-weight: 700;
+  white-space: nowrap;
+}
+
+.overdue-reminder.sent {
+  background: #e9f9f1;
+  color: #059669;
+}
+
+.overdue-reminder.pending {
+  background: #fff3e6;
+  color: #c47b12;
+}
+
+.overdue-actions {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+
+.overdue-view-btn {
+  width: 32px;
+  height: 32px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e2e7ef;
+  border-radius: 7px;
+  background: white;
+  color: #526075;
+  cursor: pointer;
+}
+
+.overdue-view-btn:hover {
+  color: #2459c5;
+  border-color: #2459c5;
+}
+
+.overdue-remind-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  padding: 8px 10px;
+  border: none;
+  border-radius: 7px;
+  background: #fff0ef;
+  color: #c24135;
+  font-size: 11px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.overdue-remind-btn:hover {
+  background: #c24135;
+  color: white;
+}
+
+.overdue-empty {
+  padding: 35px !important;
+  text-align: center;
+  color: #8b95a5 !important;
+}
+
+.overdue-note {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-top: 18px;
+  color: #718096;
+  font-size: 12px;
+}
+
+.overdue-note svg {
+  color: #64748b;
+  flex-shrink: 0;
+}
+
+.overdue-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: grid;
+  place-items: center;
+  padding: 18px;
+  background: rgba(15, 23, 42, 0.55);
+}
+
+.overdue-modal {
+  width: 100%;
+  max-width: 540px;
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+}
+
+.overdue-modal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 22px;
+}
+
+.overdue-modal-header span {
+  color: #8290a4;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.overdue-modal-header h3 {
+  margin: 6px 0 0;
+  font-size: 21px;
+}
+
+.overdue-modal-header button {
+  width: 35px;
+  height: 35px;
+  display: grid;
+  place-items: center;
+  border: none;
+  border-radius: 8px;
+  background: #f1f5f9;
+  color: #64748b;
+  cursor: pointer;
+}
+
+.overdue-detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  padding: 17px;
+  border: 1px solid #edf0f5;
+  border-radius: 10px;
+  background: #f8fafc;
+}
+
+.overdue-detail-grid span,
+.overdue-detail-grid strong {
+  display: block;
+}
+
+.overdue-detail-grid span {
+  margin-bottom: 5px;
+  color: #8b95a5;
+  font-size: 11px;
+}
+
+.overdue-detail-grid strong {
+  color: #334155;
+  font-size: 12px;
+  overflow-wrap: anywhere;
+}
+
+.overdue-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 22px;
+}
+
+.overdue-close-btn {
+  padding: 10px 17px;
+  border: 1px solid #dce2ea;
+  border-radius: 8px;
+  background: white;
+  color: #64748b;
+  font-size: 12px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+@media (max-width: 1100px) {
+  .overdue-stats {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 700px) {
+  .overdue-page {
+    padding: 16px;
+  }
+
+  .overdue-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .overdue-header h2 {
+    font-size: 25px;
+  }
+
+  .overdue-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .overdue-toolbar {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .overdue-search,
+  .overdue-filter {
+    width: 100%;
+    box-sizing: border-box;
+  }
+
+  .overdue-table-card {
+    padding: 15px;
+  }
+
+  .overdue-detail-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .overdue-modal {
+    padding: 18px;
+  }
+}

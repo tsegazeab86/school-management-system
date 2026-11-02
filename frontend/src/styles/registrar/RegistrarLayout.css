@@ -1,0 +1,23 @@
+.registrar-layout {
+  min-height: 100vh;
+  background: #f4f6fc;
+}
+
+.registrar-main {
+  min-height: 100vh;
+  margin-left: 275px;
+  padding: 25px;
+  transition: margin-left 0.3s ease;
+}
+
+.registrar-main.sidebar-collapsed {
+  margin-left: 82px;
+}
+
+@media (max-width: 768px) {
+  .registrar-main,
+  .registrar-main.sidebar-collapsed {
+    margin-left: 0;
+    padding: 16px;
+  }
+}

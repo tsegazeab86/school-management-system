@@ -1,0 +1,513 @@
+
+.promotion-page {
+  padding-bottom: 30px;
+  animation: promotionEnter 0.45s ease;
+}
+
+@keyframes promotionEnter {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.promotion-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 24px;
+}
+
+.promotion-heading h2 {
+  margin: 0 0 7px;
+  color: #202747;
+  font-size: 27px;
+  font-weight: 750;
+}
+
+.promotion-heading p,
+.promotion-section-title p,
+.promotion-table-heading p {
+  margin: 0;
+  color: #8790a5;
+  font-size: 14px;
+}
+
+.promotion-year-label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 11px 15px;
+  color: #6558d9;
+  background: #f0edff;
+  border-radius: 10px;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.promotion-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 17px;
+  margin-bottom: 23px;
+}
+
+.promotion-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 21px;
+  background: white;
+  border: 1px solid #edf0f7;
+  border-radius: 15px;
+  box-shadow: 0 5px 20px #28365b08;
+  transition: 0.25s ease;
+}
+
+.promotion-stat-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 25px #28365b12;
+}
+
+.promotion-stat-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+}
+
+.promotion-stat-icon.purple { color: #7058e8; background: #f0edff; }
+.promotion-stat-icon.green { color: #16a36a; background: #e7f8ef; }
+.promotion-stat-icon.orange { color: #e69532; background: #fff4e4; }
+
+.promotion-stat-card small {
+  color: #8991a5;
+  font-size: 12px;
+}
+
+.promotion-stat-card h3 {
+  margin: 5px 0 0;
+  color: #222b48;
+  font-size: 25px;
+}
+
+.promotion-setup-card,
+.promotion-students-card,
+.promotion-history-card {
+  padding: 23px;
+  margin-bottom: 22px;
+  background: white;
+  border: 1px solid #edf0f7;
+  border-radius: 16px;
+  box-shadow: 0 5px 25px #28365b08;
+}
+
+.promotion-section-title,
+.promotion-table-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 21px;
+}
+
+.promotion-section-title h3,
+.promotion-table-heading h3 {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0 0 6px;
+  color: #252d49;
+  font-size: 19px;
+}
+
+.promotion-section-title > svg { color: #7058e8; }
+
+.promotion-setup-grid {
+  display: grid;
+  grid-template-columns: 1fr 45px 1fr 1fr;
+  align-items: end;
+  gap: 16px;
+}
+
+.promotion-setup-grid label {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  color: #505a73;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.promotion-setup-grid select,
+.promotion-setup-grid input {
+  width: 100%;
+  height: 44px;
+  padding: 0 12px;
+  border: 1px solid #e4e8f0;
+  border-radius: 9px;
+  outline: none;
+  color: #303850;
+  background: #fafbfe;
+  font-size: 13px;
+}
+
+.promotion-setup-grid select:focus {
+  border-color: #7865e8;
+  box-shadow: 0 0 0 3px #7865e81a;
+}
+
+.promotion-setup-grid input[readonly] {
+  background: #f0edff;
+  color: #6558d9;
+  font-weight: 700;
+}
+
+.promotion-arrow {
+  height: 44px;
+  display: grid;
+  place-items: center;
+  color: #7058e8;
+}
+
+.promotion-table-heading > span {
+  padding: 7px 12px;
+  color: #6558d9;
+  background: #f0edff;
+  border-radius: 20px;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.promotion-toolbar {
+  display: flex;
+  gap: 13px;
+  margin-bottom: 20px;
+}
+
+.promotion-search,
+.promotion-filter-label {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  height: 44px;
+  padding: 0 13px;
+  border: 1px solid #e8ebf3;
+  border-radius: 10px;
+  background: #f8f9fd;
+  color: #929bb0;
+}
+
+.promotion-search { flex: 1; }
+
+.promotion-search:focus-within {
+  border-color: #7865e8;
+  box-shadow: 0 0 0 3px #7865e81a;
+}
+
+.promotion-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #303850;
+  font-size: 13px;
+}
+
+.promotion-filter-label {
+  color: #6558d9;
+  font-size: 13px;
+  font-weight: 650;
+}
+
+.promotion-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.promotion-table {
+  width: 100%;
+  min-width: 780px;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+.promotion-table thead { background: #f7f8fc; }
+
+.promotion-table th {
+  padding: 15px 12px;
+  color: #78829a;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.promotion-table td {
+  padding: 16px 12px;
+  border-bottom: 1px solid #f0f1f6;
+  color: #687188;
+  font-size: 13px;
+  white-space: nowrap;
+}
+
+.promotion-table tbody tr:hover { background: #fafaff; }
+
+.promotion-table input[type="checkbox"] {
+  width: 16px;
+  height: 16px;
+  accent-color: #7058e8;
+  cursor: pointer;
+}
+
+.promotion-table input:disabled { cursor: not-allowed; }
+
+.promotion-table td strong { color: #303850; }
+
+.promotion-student-id {
+  color: #6858df !important;
+  font-weight: 700;
+}
+
+.promotion-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.promotion-status.eligible {
+  color: #15945b;
+  background: #e5f8ee;
+}
+
+.promotion-status.review {
+  color: #d17c28;
+  background: #fff1df;
+}
+
+.promotion-empty {
+  padding: 35px !important;
+  text-align: center;
+  color: #929bb0 !important;
+}
+
+.promotion-message {
+  margin-top: 16px;
+  padding: 12px 14px;
+  color: #6558d9;
+  background: #f0edff;
+  border-radius: 9px;
+  font-size: 13px;
+}
+
+.promotion-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-top: 20px;
+  color: #8790a5;
+  font-size: 13px;
+}
+
+.promotion-submit-btn,
+.promotion-confirm-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 12px 17px;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  background: linear-gradient(135deg, #6558e8, #8b5cf6);
+  font-weight: 650;
+  cursor: pointer;
+  transition: 0.25s ease;
+}
+
+.promotion-submit-btn:hover,
+.promotion-confirm-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px #7865e544;
+}
+
+.promotion-submit-btn:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+  box-shadow: none;
+}
+
+.promotion-history-card { margin-bottom: 0; }
+
+.promotion-history-empty {
+  padding: 18px 0;
+  color: #929bb0;
+  font-size: 13px;
+  text-align: center;
+}
+
+.promotion-history-list {
+  display: flex;
+  flex-direction: column;
+}
+
+.promotion-history-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  padding: 15px 0;
+  border-bottom: 1px solid #f0f1f6;
+}
+
+.promotion-history-row:last-child { border-bottom: 0; }
+
+.promotion-history-row strong {
+  display: block;
+  color: #303850;
+  font-size: 13px;
+}
+
+.promotion-history-row small,
+.promotion-history-row > span {
+  display: block;
+  margin-top: 5px;
+  color: #929bb0;
+  font-size: 12px;
+}
+
+.promotion-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 2200;
+  display: grid;
+  place-items: center;
+  padding: 16px;
+  background: #11182c80;
+}
+
+.promotion-confirm-modal {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  padding: 28px;
+  border-radius: 17px;
+  background: white;
+  box-shadow: 0 20px 60px #0003;
+  animation: promotionEnter 0.25s ease;
+}
+
+.promotion-modal-x {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  display: grid;
+  place-items: center;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 8px;
+  background: #f1f2f8;
+  cursor: pointer;
+}
+
+.promotion-confirm-icon {
+  display: grid;
+  place-items: center;
+  width: 55px;
+  height: 55px;
+  margin-bottom: 18px;
+  color: #7058e8;
+  background: #f0edff;
+  border-radius: 15px;
+}
+
+.promotion-confirm-modal h3 {
+  margin: 0 0 10px;
+  color: #252d49;
+  font-size: 20px;
+}
+
+.promotion-confirm-modal p {
+  color: #78829a;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.promotion-confirm-modal p strong { color: #303850; }
+
+.promotion-modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 23px;
+}
+
+.promotion-cancel-btn {
+  padding: 11px 16px;
+  border: 1px solid #e4e8f0;
+  border-radius: 9px;
+  color: #687188;
+  background: white;
+  cursor: pointer;
+}
+
+@media (max-width: 900px) {
+  .promotion-setup-grid {
+    grid-template-columns: 1fr 35px 1fr;
+  }
+
+  .promotion-setup-grid label:last-child {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 650px) {
+  .promotion-heading,
+  .promotion-table-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .promotion-stats { grid-template-columns: 1fr; }
+
+  .promotion-setup-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .promotion-arrow { transform: rotate(90deg); }
+
+  .promotion-setup-grid label:last-child {
+    grid-column: auto;
+  }
+
+  .promotion-setup-card,
+  .promotion-students-card,
+  .promotion-history-card {
+    padding: 15px;
+  }
+
+  .promotion-toolbar,
+  .promotion-footer {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .promotion-submit-btn { width: 100%; }
+
+  .promotion-modal-actions {
+    flex-direction: column-reverse;
+  }
+
+  .promotion-modal-actions button { width: 100%; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .promotion-page,
+  .promotion-stat-card,
+  .promotion-confirm-modal {
+    animation: none;
+    transition: none;
+  }
+}

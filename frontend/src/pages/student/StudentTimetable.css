@@ -1,0 +1,571 @@
+
+.student-timetable {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f8fafc;
+  color: #172033;
+}
+
+/* Header */
+.st-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 30px;
+  margin-bottom: 25px;
+  color: white;
+  border-radius: 20px;
+  background: linear-gradient(120deg, #064e3b, #047857, #10b981);
+}
+
+.st-eyebrow {
+  color: #a7f3d0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 2px;
+}
+
+.st-header h1 {
+  margin: 9px 0;
+  font-size: 30px;
+}
+
+.st-header p {
+  margin: 0;
+  color: #d1fae5;
+  font-size: 14px;
+}
+
+.st-header-icon {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+/* Statistics */
+.st-stats {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 17px;
+  margin-bottom: 25px;
+}
+
+.st-stat-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 20px;
+  border: 1px solid #e5eaf2;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 5px 18px rgba(15, 23, 42, 0.04);
+  transition: 0.25s;
+}
+
+.st-stat-card:hover {
+  box-shadow: 0 12px 25px rgba(15, 23, 42, 0.09);
+}
+
+.st-stat-icon {
+  width: 47px;
+  height: 47px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+}
+
+.st-blue .st-stat-icon,
+.st-blue {
+  color: #2563eb;
+}
+
+.st-stat-card .st-blue {
+  background: #dbeafe;
+}
+
+.st-stat-card .st-purple {
+  background: #ede9fe;
+  color: #7c3aed;
+}
+
+.st-stat-card .st-green {
+  background: #d1fae5;
+  color: #059669;
+}
+
+.st-stat-card .st-orange {
+  background: #ffedd5;
+  color: #ea580c;
+}
+
+.st-stat-card span {
+  color: #64748b;
+  font-size: 12px;
+}
+
+.st-stat-card h2 {
+  margin: 5px 0 0;
+  font-size: 25px;
+}
+
+/* Today */
+.st-today-panel {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 20px;
+  margin-bottom: 24px;
+  border: 1px solid #a7f3d0;
+  border-radius: 15px;
+  background: #ecfdf5;
+}
+
+.st-today-icon {
+  width: 48px;
+  height: 48px;
+  display: grid;
+  place-items: center;
+  border-radius: 13px;
+  background: #d1fae5;
+  color: #047857;
+}
+
+.st-today-panel span {
+  color: #059669;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.st-today-panel h3 {
+  margin: 4px 0;
+  color: #065f46;
+}
+
+.st-today-panel p {
+  margin: 0;
+  color: #64748b;
+  font-size: 12px;
+}
+
+/* Filters */
+.st-toolbar {
+  display: flex;
+  gap: 15px;
+  margin-bottom: 25px;
+}
+
+.st-search,
+.st-day-select {
+  height: 47px;
+  border: 1px solid #e2e8f0;
+  border-radius: 11px;
+  background: white;
+  color: #64748b;
+}
+
+.st-search {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 15px;
+}
+
+.st-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #172033;
+}
+
+.st-day-select {
+  min-width: 160px;
+  padding: 0 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Section headings */
+.st-week-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 17px;
+}
+
+.st-week-heading h2 {
+  margin: 0 0 5px;
+  font-size: 20px;
+}
+
+.st-week-heading p {
+  margin: 0;
+  color: #64748b;
+  font-size: 13px;
+}
+
+.st-week-controls {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.st-week-controls button {
+  height: 35px;
+  min-width: 35px;
+  display: grid;
+  place-items: center;
+  border: 1px solid #e2e8f0;
+  border-radius: 8px;
+  background: white;
+  color: #475569;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.st-week-controls button:hover {
+  border-color: #059669;
+  color: #059669;
+}
+
+.st-week-controls span {
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.st-week-controls .st-current-week {
+  padding: 0 10px;
+  display: block;
+  background: #047857;
+  color: white;
+  border-color: #047857;
+}
+
+/* Timetable grid */
+.st-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  margin-bottom: 30px;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  background: white;
+}
+
+.st-table {
+  display: grid;
+  grid-template-columns: 85px repeat(6, minmax(145px, 1fr));
+  min-width: 1000px;
+}
+
+.st-time-column,
+.st-day-column {
+  border-right: 1px solid #e2e8f0;
+}
+
+.st-day-heading {
+  height: 55px;
+  display: grid;
+  place-items: center;
+  background: #ecfdf5;
+  color: #047857;
+  font-size: 12px;
+  font-weight: 800;
+  border-bottom: 1px solid #d1fae5;
+}
+
+.st-time-cell,
+.st-slot {
+  height: 85px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+.st-time-cell {
+  display: grid;
+  place-items: center;
+  color: #64748b;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.st-slot {
+  padding: 5px;
+  position: relative;
+}
+
+.st-class-card {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+  padding: 8px;
+  border: none;
+  border-left: 4px solid currentColor;
+  border-radius: 8px;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.st-class-card strong {
+  font-size: 11px;
+  line-height: 1.3;
+}
+
+.st-class-card span,
+.st-class-card small {
+  font-size: 10px;
+}
+
+.st-class-card small {
+  opacity: 0.8;
+}
+
+.st-class-card.st-blue,
+.st-list-color.st-blue {
+  background: #dbeafe;
+  color: #1d4ed8;
+}
+
+.st-class-card.st-purple,
+.st-list-color.st-purple {
+  background: #ede9fe;
+  color: #6d28d9;
+}
+
+.st-class-card.st-orange,
+.st-list-color.st-orange {
+  background: #ffedd5;
+  color: #c2410c;
+}
+
+.st-class-card.st-green,
+.st-list-color.st-green {
+  background: #d1fae5;
+  color: #047857;
+}
+
+/* Class list */
+.st-class-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.st-list-item {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 16px;
+  border: 1px solid #e5eaf2;
+  border-radius: 12px;
+  background: white;
+  text-align: left;
+  cursor: pointer;
+  transition: 0.25s;
+}
+
+.st-list-item:hover {
+  border-color: #6ee7b7;
+  box-shadow: 0 7px 20px rgba(4, 120, 87, 0.07);
+}
+
+.st-list-color {
+  width: 5px;
+  height: 43px;
+  border-radius: 5px;
+}
+
+.st-list-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.st-list-main strong {
+  color: #172033;
+  font-size: 13px;
+}
+
+.st-list-main span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.st-list-time,
+.st-list-room {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #64748b;
+  font-size: 11px;
+}
+
+.st-list-time svg,
+.st-list-room svg {
+  color: #059669;
+}
+
+/* Empty state */
+.st-empty {
+  padding: 45px 20px;
+  text-align: center;
+  border-radius: 13px;
+  background: white;
+  color: #64748b;
+}
+
+.st-empty h3 {
+  color: #334155;
+}
+
+/* Modal */
+.st-modal-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background: rgba(15, 23, 42, 0.65);
+}
+
+.st-modal {
+  position: relative;
+  width: 100%;
+  max-width: 480px;
+  padding: 30px;
+  border-radius: 18px;
+  background: white;
+  box-shadow: 0 25px 70px rgba(0, 0, 0, 0.25);
+}
+
+.st-modal-close {
+  position: absolute;
+  top: 15px;
+  right: 17px;
+  width: 34px;
+  height: 34px;
+  border: none;
+  border-radius: 9px;
+  background: #f1f5f9;
+  color: #475569;
+  font-size: 23px;
+  cursor: pointer;
+}
+
+.st-modal-label {
+  color: #059669;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+
+.st-modal h2 {
+  margin: 10px 0 23px;
+  color: #172033;
+  font-size: 22px;
+}
+
+.st-modal-detail {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 13px 0;
+  border-bottom: 1px solid #f1f5f9;
+  color: #059669;
+}
+
+.st-modal-detail div {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.st-modal-detail span {
+  color: #64748b;
+  font-size: 11px;
+}
+
+.st-modal-detail strong {
+  color: #172033;
+  font-size: 13px;
+}
+
+/* Responsive */
+@media (max-width: 1000px) {
+  .st-stats {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 700px) {
+  .student-timetable {
+    padding: 15px;
+  }
+
+  .st-header {
+    padding: 22px;
+  }
+
+  .st-header h1 {
+    font-size: 24px;
+  }
+
+  .st-header-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .st-toolbar {
+    flex-direction: column;
+  }
+
+  .st-day-select {
+    width: 100%;
+  }
+
+  .st-week-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .st-list-item {
+    align-items: flex-start;
+    flex-wrap: wrap;
+  }
+
+  .st-list-main {
+    min-width: 70%;
+  }
+
+  .st-list-time,
+  .st-list-room {
+    margin-left: 20px;
+  }
+}
+
+@media (max-width: 450px) {
+  .st-stats {
+    grid-template-columns: 1fr;
+  }
+
+  .st-week-controls {
+    flex-wrap: wrap;
+  }
+
+  .st-modal {
+    padding: 22px;
+  }
+}

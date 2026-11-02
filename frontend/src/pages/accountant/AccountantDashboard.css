@@ -1,0 +1,479 @@
+
+.accountant-dashboard {
+  min-height: 100vh;
+  padding: 25px;
+  background: #f5f7fb;
+  color: #273449;
+  font-size: 15px;
+}
+
+.accountant-welcome {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px;
+  margin-bottom: 23px;
+  border-radius: 17px;
+  color: white;
+  background: linear-gradient(120deg, #124e42, #16866b);
+  box-shadow: 0 8px 22px rgba(18, 78, 66, 0.15);
+}
+
+.accountant-eyebrow {
+  font-size: 12px;
+  font-weight: 750;
+  letter-spacing: 2px;
+  opacity: 0.8;
+}
+
+.accountant-welcome h2 {
+  margin: 9px 0;
+  font-size: 29px;
+  font-weight: 750;
+}
+
+.accountant-welcome p {
+  margin: 0;
+  font-size: 15px;
+  opacity: 0.9;
+}
+
+.accountant-welcome-icon {
+  width: 70px;
+  height: 70px;
+  display: grid;
+  place-items: center;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.16);
+}
+
+.accountant-stat-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 20px;
+}
+
+.accountant-stat-card {
+  padding: 20px;
+  border: 1px solid #e9edf3;
+  border-radius: 15px;
+  background: white;
+  box-shadow: 0 4px 14px rgba(30, 50, 80, 0.04);
+  transition: 0.25s ease;
+}
+
+.accountant-stat-card:hover {
+  box-shadow: 0 10px 23px rgba(30, 50, 80, 0.09);
+}
+
+.accountant-stat-top {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.accountant-stat-icon {
+  width: 46px;
+  height: 46px;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+}
+
+.accountant-stat-top > span {
+  color: #16815e;
+  font-size: 12px;
+  font-weight: 750;
+}
+
+.accountant-stat-card p {
+  margin: 17px 0 5px;
+  color: #8290a2;
+  font-size: 13px;
+}
+
+.accountant-stat-card h3 {
+  margin: 0;
+  color: #273449;
+  font-size: 25px;
+  font-weight: 750;
+}
+
+.accountant-stat-card small {
+  display: block;
+  margin-top: 7px;
+  color: #98a2b1;
+  font-size: 12px;
+}
+
+.accountant-stat-card.income .accountant-stat-icon {
+  color: #16815e;
+  background: #e3f7ed;
+}
+
+.accountant-stat-card.expenses .accountant-stat-icon {
+  color: #d45c5c;
+  background: #fff0f0;
+}
+
+.accountant-stat-card.balance .accountant-stat-icon {
+  color: #257bb5;
+  background: #e8f4ff;
+}
+
+.accountant-stat-card.students .accountant-stat-icon {
+  color: #7957bd;
+  background: #f1eaff;
+}
+
+.accountant-secondary-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 17px;
+  margin-bottom: 23px;
+}
+
+.accountant-secondary-card {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 19px;
+  border: 1px solid #e9edf3;
+  border-radius: 14px;
+  background: white;
+  transition: 0.25s;
+}
+
+.accountant-secondary-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 20px rgba(30, 50, 80, 0.07);
+}
+
+.secondary-icon {
+  width: 46px;
+  height: 46px;
+  flex-shrink: 0;
+  display: grid;
+  place-items: center;
+  border-radius: 12px;
+}
+
+.pending-icon {
+  color: #c17b15;
+  background: #fff3df;
+}
+
+.overdue-icon {
+  color: #d45c5c;
+  background: #fff0f0;
+}
+
+.receipt-icon {
+  color: #7957bd;
+  background: #f1eaff;
+}
+
+.accountant-secondary-card span {
+  color: #8290a2;
+  font-size: 12px;
+}
+
+.accountant-secondary-card h3 {
+  margin: 4px 0;
+  font-size: 21px;
+  font-weight: 750;
+}
+
+.accountant-secondary-card small {
+  color: #98a2b1;
+  font-size: 11px;
+}
+
+.accountant-chart-section,
+.accountant-transactions {
+  padding: 23px;
+  margin-bottom: 23px;
+  border: 1px solid #e9edf3;
+  border-radius: 15px;
+  background: white;
+}
+
+.accountant-section-heading {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 15px;
+  margin-bottom: 20px;
+}
+
+.accountant-section-heading h3 {
+  margin: 0;
+  color: #273449;
+  font-size: 19px;
+  font-weight: 750;
+}
+
+.accountant-section-heading p {
+  margin: 5px 0 0;
+  color: #8792a2;
+  font-size: 13px;
+}
+
+.chart-period {
+  padding: 8px 12px;
+  border-radius: 8px;
+  color: #16815e;
+  background: #e8f7ef;
+  font-size: 12px;
+  font-weight: 650;
+}
+
+.financial-chart {
+  height: 220px;
+  display: flex;
+  justify-content: space-around;
+  align-items: end;
+  gap: 18px;
+  padding: 15px 10px 0;
+  border-bottom: 1px solid #e8edf3;
+}
+
+.chart-month {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  height: 100%;
+  flex: 1;
+  color: #8490a0;
+  font-size: 12px;
+}
+
+.chart-bars {
+  display: flex;
+  align-items: end;
+  justify-content: center;
+  gap: 7px;
+  width: 100%;
+  height: 180px;
+}
+
+.chart-bar {
+  width: 24px;
+  min-height: 3px;
+  border-radius: 6px 6px 0 0;
+  transition: height 0.4s ease;
+}
+
+.chart-bar:hover {
+  opacity: 0.75;
+}
+
+.income-bar {
+  background: #16815e;
+}
+
+.expense-bar {
+  background: #e8a34a;
+}
+
+.chart-legend {
+  display: flex;
+  justify-content: center;
+  gap: 25px;
+  margin-top: 17px;
+}
+
+.chart-legend span {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  color: #7c899a;
+  font-size: 12px;
+}
+
+.chart-legend i {
+  width: 10px;
+  height: 10px;
+  border-radius: 3px;
+}
+
+.legend-income {
+  background: #16815e;
+}
+
+.legend-expense {
+  background: #e8a34a;
+}
+
+.transaction-export-btn {
+  display: flex;
+  align-items: center;
+  gap: 7px;
+  padding: 10px 14px;
+  border: none;
+  border-radius: 8px;
+  color: white;
+  background: #16815e;
+  font-size: 13px;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.transaction-export-btn:hover {
+  background: #124e42;
+}
+
+.transaction-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 420px;
+  padding: 11px 13px;
+  margin-bottom: 18px;
+  border: 1px solid #e1e7ef;
+  border-radius: 9px;
+  color: #8792a2;
+}
+
+.transaction-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  color: #273449;
+  font-size: 13px;
+}
+
+.accountant-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+}
+
+.accountant-table {
+  min-width: 850px;
+  margin-bottom: 0;
+}
+
+.accountant-table thead th {
+  padding: 15px 12px;
+  color: #7c899a;
+  background: #f7f9fc;
+  font-size: 12px;
+  white-space: nowrap;
+}
+
+.accountant-table tbody td {
+  padding: 15px 12px;
+  color: #536176;
+  font-size: 13px;
+}
+
+.accountant-table tbody tr:hover {
+  background: #f5faf8;
+}
+
+.accountant-table tbody td strong {
+  color: #16815e;
+}
+
+.transaction-amount {
+  color: #16815e !important;
+  font-weight: 750;
+}
+
+.transaction-status {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.transaction-status.completed {
+  color: #16815e;
+  background: #e3f7ed;
+}
+
+.transaction-status.pending {
+  color: #b7791f;
+  background: #fff3df;
+}
+
+.accountant-permission-note {
+  display: flex;
+  align-items: center;
+  gap: 13px;
+  padding: 17px;
+  margin-bottom: 15px;
+  border: 1px solid #dceee6;
+  border-radius: 12px;
+  color: #477361;
+  background: #edf8f2;
+}
+
+.accountant-permission-note > div {
+  display: grid;
+  place-items: center;
+}
+
+.accountant-permission-note p {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+@media (max-width: 1100px) {
+  .accountant-stat-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .accountant-secondary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 650px) {
+  .accountant-dashboard {
+    padding: 14px;
+  }
+
+  .accountant-welcome {
+    padding: 22px;
+  }
+
+  .accountant-welcome h2 {
+    font-size: 23px;
+  }
+
+  .accountant-welcome-icon {
+    width: 52px;
+    height: 52px;
+  }
+
+  .accountant-stat-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .accountant-chart-section,
+  .accountant-transactions {
+    padding: 15px;
+  }
+
+  .accountant-section-heading {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .financial-chart {
+    gap: 5px;
+  }
+
+  .chart-bar {
+    width: 16px;
+  }
+
+  .chart-period {
+    font-size: 11px;
+  }
+}

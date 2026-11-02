@@ -1,0 +1,617 @@
+
+.parent-attendance-page {
+  min-height: 100vh;
+  padding: 28px;
+  background: #f4f7fc;
+  color: #263c5e;
+  font-size: 14px;
+}
+
+/* Header */
+.pa-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 25px;
+}
+
+.pa-eyebrow {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 9px;
+  color: #3478d9;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 1.1px;
+}
+
+.pa-header h1 {
+  margin: 0 0 7px;
+  color: #203a63;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.pa-header p {
+  margin: 0;
+  color: #8290a6;
+  font-size: 14px;
+}
+
+.pa-header-icon {
+  display: grid;
+  place-items: center;
+  width: 58px;
+  height: 58px;
+  border-radius: 16px;
+  color: #3478d9;
+  background: #e6efff;
+}
+
+/* Filters */
+.pa-filter-card {
+  padding: 21px;
+  margin-bottom: 22px;
+  border: 1px solid #e7edf5;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 4px 15px rgba(33, 59, 96, 0.035);
+}
+
+.pa-filter-title {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+  margin-bottom: 17px;
+  color: #2e4a72;
+  font-size: 16px;
+}
+
+.pa-filter-title svg {
+  color: #397bdc;
+}
+
+.pa-filter-card .form-label {
+  margin-bottom: 7px;
+  color: #60738f;
+  font-size: 13px;
+  font-weight: 700;
+}
+
+.pa-filter-card .form-select,
+.pa-filter-card .form-control {
+  min-height: 45px;
+  border-color: #e0e7f0;
+  border-radius: 9px;
+  color: #405674;
+  font-size: 13px;
+  box-shadow: none;
+}
+
+.pa-filter-card .form-select:focus,
+.pa-filter-card .form-control:focus {
+  border-color: #6c9de9;
+  box-shadow: 0 0 0 3px rgba(57, 123, 220, 0.09);
+}
+
+/* Statistics */
+.pa-stats-row {
+  margin-bottom: 24px;
+}
+
+.pa-stat-card {
+  height: 100%;
+  min-height: 145px;
+  padding: 18px;
+  border: 1px solid #e9eef5;
+  border-radius: 13px;
+  background: white;
+  transition: box-shadow 0.25s ease;
+}
+
+.pa-stat-card:hover {
+  box-shadow: 0 11px 25px rgba(34, 59, 94, 0.09);
+}
+
+.pa-stat-icon {
+  display: grid;
+  place-items: center;
+  width: 42px;
+  height: 42px;
+  margin-bottom: 12px;
+  border-radius: 12px;
+}
+
+.pa-stat-card > span {
+  display: block;
+  color: #7e8da3;
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.pa-stat-card h3 {
+  margin: 5px 0;
+  color: #293f61;
+  font-size: 27px;
+  font-weight: 900;
+}
+
+.pa-stat-card small {
+  color: #9aa6b6;
+  font-size: 11px;
+}
+
+.pa-stat-green .pa-stat-icon {
+  color: #159c70;
+  background: #e4f7ef;
+}
+
+.pa-stat-red .pa-stat-icon {
+  color: #e05d69;
+  background: #fff0f1;
+}
+
+.pa-stat-orange .pa-stat-icon {
+  color: #db933a;
+  background: #fff5e7;
+}
+
+.pa-stat-blue .pa-stat-icon {
+  color: #397bdc;
+  background: #eaf1ff;
+}
+
+/* Panels */
+.pa-main-row {
+  margin-bottom: 23px;
+}
+
+.pa-panel {
+  height: 100%;
+  padding: 22px;
+  border: 1px solid #e7edf5;
+  border-radius: 14px;
+  background: white;
+  box-shadow: 0 4px 15px rgba(33, 59, 96, 0.03);
+}
+
+.pa-panel-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  margin-bottom: 20px;
+}
+
+.pa-panel-heading h2 {
+  margin: 0 0 6px;
+  color: #2a4267;
+  font-size: 17px;
+  font-weight: 800;
+}
+
+.pa-panel-heading p {
+  margin: 0;
+  color: #8c99ad;
+  font-size: 12px;
+}
+
+/* Calendar */
+.pa-month-controls {
+  display: flex;
+  gap: 7px;
+}
+
+.pa-month-controls button {
+  width: 34px;
+  height: 34px;
+  border: 1px solid #e4eaf3;
+  border-radius: 9px;
+  background: #f8faff;
+  color: #4779c2;
+  font-size: 24px;
+  line-height: 1;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.pa-month-controls button:hover {
+  border-color: #397bdc;
+  background: #397bdc;
+  color: white;
+}
+
+.pa-calendar {
+  display: grid;
+  grid-template-columns: repeat(7, minmax(0, 1fr));
+  gap: 8px;
+}
+
+.pa-calendar-weekday {
+  padding: 8px 0;
+  color: #8593a8;
+  font-size: 12px;
+  font-weight: 800;
+  text-align: center;
+}
+
+.pa-calendar-cell {
+  display: grid;
+  place-items: center;
+  min-height: 43px;
+  border-radius: 9px;
+  background: #fafbfd;
+}
+
+.pa-calendar-day {
+  display: grid;
+  place-items: center;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  color: #536782;
+  font-size: 12px;
+  font-weight: 700;
+}
+
+.pa-calendar-day.pa-present {
+  background: #dcf5e9;
+  color: #138a5e;
+}
+
+.pa-calendar-day.pa-absent {
+  background: #ffe6e8;
+  color: #d44d5b;
+}
+
+.pa-calendar-day.pa-late {
+  background: #fff0d9;
+  color: #bd7b20;
+}
+
+.pa-calendar-day.pa-excused {
+  background: #e5efff;
+  color: #397bdc;
+}
+
+.pa-calendar-legend {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid #edf1f6;
+}
+
+.pa-calendar-legend span {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  color: #74849b;
+  font-size: 11px;
+}
+
+.pa-dot {
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+}
+
+.pa-dot-green { background: #25ad7a; }
+.pa-dot-red { background: #df6670; }
+.pa-dot-orange { background: #e5a13f; }
+.pa-dot-blue { background: #5089e2; }
+
+/* Attendance rate */
+.pa-trend-icon {
+  color: #22a47a;
+}
+
+.pa-rate-circle {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 205px;
+  height: 205px;
+  margin: 12px auto 20px;
+}
+
+.pa-rate-circle svg {
+  width: 100%;
+  height: 100%;
+  transform: rotate(-90deg);
+}
+
+.pa-rate-track,
+.pa-rate-value {
+  fill: none;
+  stroke-width: 13;
+}
+
+.pa-rate-track {
+  stroke: #edf1f7;
+}
+
+.pa-rate-value {
+  stroke: #24ad7d;
+  stroke-linecap: round;
+  transition: stroke-dasharray 0.6s ease;
+}
+
+.pa-rate-center {
+  position: absolute;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.pa-rate-center strong {
+  color: #25436c;
+  font-size: 35px;
+  font-weight: 900;
+}
+
+.pa-rate-center span {
+  color: #8c9bb0;
+  font-size: 12px;
+}
+
+.pa-rate-description {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+  padding: 15px;
+  border-radius: 10px;
+  background: #f7f9fd;
+}
+
+.pa-rate-description div {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.pa-rate-description svg {
+  color: #397bdc;
+}
+
+.pa-rate-description span {
+  flex: 1;
+  color: #7e8da3;
+  font-size: 12px;
+}
+
+.pa-rate-description strong {
+  color: #2d466d;
+  font-size: 14px;
+}
+
+.pa-rate-note {
+  margin: 13px 0 0;
+  color: #9aa6b6;
+  font-size: 11px;
+  line-height: 1.6;
+}
+
+/* History table */
+.pa-history-panel {
+  margin-bottom: 21px;
+}
+
+.pa-history-heading {
+  margin-bottom: 17px;
+}
+
+.pa-record-count {
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: #eaf1ff;
+  color: #397bdc;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.pa-table-search {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  max-width: 380px;
+  height: 43px;
+  padding: 0 13px;
+  margin-bottom: 18px;
+  border: 1px solid #e3eaf3;
+  border-radius: 9px;
+  color: #8c9bb0;
+  background: #fafcff;
+}
+
+.pa-table-search:focus-within {
+  border-color: #6c9de9;
+  box-shadow: 0 0 0 3px rgba(57, 123, 220, 0.08);
+}
+
+.pa-table-search input {
+  width: 100%;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: #405674;
+  font-size: 12px;
+}
+
+.pa-table-search input::placeholder {
+  color: #a1adbd;
+}
+
+.pa-table {
+  min-width: 750px;
+  margin-bottom: 0;
+}
+
+.pa-table thead th {
+  padding: 14px 12px;
+  border-bottom: 1px solid #e8edf4;
+  background: #f7f9fd;
+  color: #74859e;
+  font-size: 12px;
+  font-weight: 800;
+  white-space: nowrap;
+}
+
+.pa-table tbody td {
+  padding: 15px 12px;
+  border-bottom: 1px solid #eff2f6;
+  color: #687c97;
+  font-size: 12px;
+  vertical-align: middle;
+}
+
+.pa-table tbody tr {
+  transition: background 0.2s ease;
+}
+
+.pa-table tbody tr:hover {
+  background: #f7faff;
+}
+
+.pa-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pa-table .pa-student-name {
+  color: #344d73;
+  font-weight: 800;
+}
+
+.pa-status-badge {
+  display: inline-block;
+  padding: 6px 10px;
+  border-radius: 20px;
+  font-size: 11px;
+  font-weight: 800;
+}
+
+.pa-status-badge.pa-present {
+  color: #138a5e;
+  background: #e1f6ec;
+}
+
+.pa-status-badge.pa-absent {
+  color: #d44d5b;
+  background: #ffeaec;
+}
+
+.pa-status-badge.pa-late {
+  color: #b9781c;
+  background: #fff2df;
+}
+
+.pa-status-badge.pa-excused {
+  color: #397bdc;
+  background: #e8f0ff;
+}
+
+.pa-no-records {
+  padding: 30px !important;
+  color: #8997aa !important;
+  text-align: center;
+}
+
+/* Notice */
+.pa-notice {
+  display: flex;
+  align-items: flex-start;
+  gap: 13px;
+  padding: 17px;
+  border: 1px solid #dce8fa;
+  border-radius: 12px;
+  background: #edf4ff;
+}
+
+.pa-notice > svg {
+  flex-shrink: 0;
+  color: #397bdc;
+}
+
+.pa-notice strong {
+  color: #355783;
+  font-size: 13px;
+}
+
+.pa-notice p {
+  margin: 5px 0 0;
+  color: #788eac;
+  font-size: 12px;
+  line-height: 1.6;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .parent-attendance-page {
+    padding: 17px;
+  }
+
+  .pa-header h1 {
+    font-size: 25px;
+  }
+
+  .pa-panel {
+    padding: 17px;
+  }
+
+  .pa-calendar {
+    gap: 4px;
+  }
+
+  .pa-calendar-cell {
+    min-height: 37px;
+  }
+
+  .pa-calendar-day {
+    width: 29px;
+    height: 29px;
+  }
+}
+
+@media (max-width: 480px) {
+  .parent-attendance-page {
+    padding: 12px;
+  }
+
+  .pa-header h1 {
+    font-size: 22px;
+  }
+
+  .pa-header p {
+    font-size: 12px;
+  }
+
+  .pa-header-icon {
+    width: 45px;
+    height: 45px;
+  }
+
+  .pa-filter-card,
+  .pa-panel {
+    padding: 14px;
+  }
+
+  .pa-calendar-legend {
+    gap: 10px;
+  }
+
+  .pa-calendar-legend span {
+    font-size: 10px;
+  }
+
+  .pa-rate-circle {
+    width: 175px;
+    height: 175px;
+  }
+
+  .pa-stat-card {
+    padding: 14px;
+  }
+}
