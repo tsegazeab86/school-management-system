@@ -1,287 +1,745 @@
+/**
+ * ====================================================================
+ * EDUMANAGE ENTERPRISE ADMIN SIDEBAR - DESIGN SYSTEM STYLESHEET
+ * ====================================================================
+ * Palette: Deep Midnight Navy (#101B35, #0B1326), Electric Blue (#3B82F6),
+ * Subtle Teal (#14B8A6), Crisp White (#FFFFFF), and Muted Slate (#94A3B8).
+ */
 
-.admin-sidebar {
+/* ====================================================================
+   1. MAIN SIDEBAR CONTAINER
+   ==================================================================== */
+.admin-sidebar-container {
   position: fixed;
   top: 0;
   left: 0;
-  width: 275px;
+  width: 280px;
   height: 100vh;
   display: flex;
   flex-direction: column;
-  background: linear-gradient(180deg, #171735 0%, #22204d 55%, #29245c 100%);
-  color: #fff;
+  background-color: #101b35;
+  background-image: linear-gradient(180deg, #0b1326 0%, #101b35 15%, #0d172e 85%, #0b1326 100%);
+  color: #f8fafc;
   z-index: 1000;
-  transition: width 0.3s ease, transform 0.3s ease;
-  box-shadow: 8px 0 30px rgba(25, 22, 65, 0.12);
+  border-right: 1px solid rgba(255, 255, 255, 0.07);
+  box-shadow: 8px 0 32px rgba(11, 19, 38, 0.35);
+  transition: width 0.28s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.28s cubic-bezier(0.4, 0, 0.2, 1);
+  user-select: none;
 }
 
-.admin-sidebar.collapsed {
-  width: 82px;
+/* Collapsed Desktop State */
+.admin-sidebar-container.is-collapsed {
+  width: 80px;
 }
 
-.admin-sidebar-brand {
-  min-height: 82px;
+/* ====================================================================
+   2. BRAND HEADER SECTION (#0B1326)
+   ==================================================================== */
+.admin-sidebar-brand-bar {
+  height: 74px;
+  min-height: 74px;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 16px;
-  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 16px;
+  background-color: #0b1326;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.07);
   position: relative;
+  flex-shrink: 0;
 }
 
-.admin-brand-icon {
-  width: 44px;
-  height: 44px;
-  min-width: 44px;
+.admin-brand-logo-box {
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #2563eb 0%, #3b82f6 50%, #14b8a6 100%);
+  color: #ffffff;
   display: grid;
   place-items: center;
-  border-radius: 13px;
-  background: linear-gradient(135deg, #8172f5, #a78bfa);
-  color: white;
+  box-shadow: 0 4px 14px rgba(59, 130, 246, 0.35);
+  flex-shrink: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
 
-.admin-brand-text {
-  min-width: 0;
+.admin-brand-logo-box:hover {
+  transform: scale(1.04);
+  box-shadow: 0 6px 18px rgba(59, 130, 246, 0.45);
+}
+
+.admin-school-svg {
+  filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.25));
+}
+
+.admin-brand-details {
   flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
 }
 
-.admin-brand-text h2 {
-  font-size: 14px;
+.admin-brand-name {
+  font-size: 16px;
   font-weight: 800;
+  letter-spacing: -0.02em;
+  color: #ffffff;
   margin: 0;
-  color: #fff;
+  line-height: 1.2;
   white-space: nowrap;
 }
 
-.admin-brand-text span {
-  display: block;
-  color: #b9b5dc;
-  font-size: 12px;
-  margin-top: 5px;
+.admin-brand-badge-row {
+  margin-top: 3px;
 }
 
-.admin-collapse-button {
+.admin-system-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+  font-size: 9.5px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #2dd4bf;
+  background: rgba(20, 184, 166, 0.12);
+  border: 1px solid rgba(45, 212, 191, 0.25);
+  padding: 2px 7px;
+  border-radius: 9999px;
+  line-height: 1.3;
+}
+
+.admin-chip-dot {
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: #2dd4bf;
+  box-shadow: 0 0 6px rgba(45, 212, 191, 0.7);
+}
+
+/* Mobile Drawer Close Button (hidden on desktop) */
+.admin-mobile-drawer-close-btn {
+  display: none;
+}
+
+/* Desktop Collapse Toggle Button */
+.admin-collapse-toggle-btn {
   position: absolute;
   right: -13px;
-  top: 32px;
-  width: 27px;
-  height: 27px;
+  top: 24px;
+  width: 26px;
+  height: 26px;
+  border-radius: 50%;
+  border: 1px solid rgba(255, 255, 255, 0.16);
+  background: #0b1326;
+  color: #94a3b8;
   display: grid;
   place-items: center;
-  border: 1px solid #e4e0ff;
-  border-radius: 50%;
-  background: #fff;
-  color: #5545bd;
   cursor: pointer;
-  z-index: 2;
+  z-index: 20;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
 }
 
-.admin-sidebar-nav {
-  flex: 1;
-  overflow-y: auto;
-  overflow-x: hidden;
-  padding: 18px 12px;
+.admin-collapse-toggle-btn:hover {
+  background: #3b82f6;
+  color: #ffffff;
+  border-color: #3b82f6;
+  transform: scale(1.1);
+  box-shadow: 0 0 12px rgba(59, 130, 246, 0.5);
 }
 
-.admin-sidebar-nav::-webkit-scrollbar {
-  width: 5px;
+.admin-collapse-toggle-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
 }
 
-.admin-sidebar-nav::-webkit-scrollbar-thumb {
-  background: rgba(255, 255, 255, 0.2);
-  border-radius: 10px;
-}
-
-.admin-section-label {
-  color: #9692bd;
-  font-size: 10px;
-  font-weight: 800;
-  letter-spacing: 1.2px;
-  padding: 12px 12px 8px;
-  margin: 0;
-}
-
-.admin-nav-link,
-.admin-group-button {
-  width: 100%;
-  min-height: 46px;
-  display: flex;
-  align-items: center;
-  gap: 13px;
-  padding: 0 13px;
-  margin-bottom: 5px;
-  border: 0;
-  border-radius: 10px;
-  background: transparent;
-  color: #d0cee5;
-  text-decoration: none;
-  font-family: inherit;
-  font-size: 13px;
-  font-weight: 600;
-  text-align: left;
-  cursor: pointer;
-  transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease;
-}
-
-.admin-nav-link span,
-.admin-group-button span {
-  flex: 1;
-  white-space: nowrap;
-}
-
-.admin-nav-link:hover,
-.admin-group-button:hover {
-  background: rgba(255, 255, 255, 0.09);
-  color: #fff;
-  transform: translateX(2px);
-}
-
-.admin-nav-link.active {
-  color: #fff;
-  background: linear-gradient(100deg, #7163e8, #8d6df0);
-  box-shadow: 0 6px 16px rgba(112, 92, 220, 0.25);
-}
-
-.admin-group-button {
-  justify-content: flex-start;
-}
-
-.admin-chevron {
-  transition: transform 0.25s ease;
-}
-
-.admin-chevron.rotated {
-  transform: rotate(180deg);
-}
-
-.admin-submenu {
-  padding: 3px 0 7px 15px;
-  margin-left: 20px;
-  border-left: 1px solid rgba(255, 255, 255, 0.15);
-}
-
-.admin-submenu .admin-nav-link {
-  min-height: 40px;
-  font-size: 12px;
-  padding-left: 12px;
-}
-
-.admin-sidebar.collapsed .admin-sidebar-nav {
-  padding-left: 10px;
-  padding-right: 10px;
-}
-
-.admin-sidebar.collapsed .admin-nav-link,
-.admin-sidebar.collapsed .admin-group-button {
+.admin-sidebar-container.is-collapsed .admin-sidebar-brand-bar {
   justify-content: center;
   padding: 0;
 }
 
-.admin-sidebar-divider {
-  height: 1px;
-  margin: 15px 8px;
-  background: rgba(255, 255, 255, 0.12);
+/* ====================================================================
+   3. SCROLLABLE NAVIGATION & SLIM SCROLLBAR
+   ==================================================================== */
+.admin-sidebar-scroll-nav {
+  flex: 1;
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 16px 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 255, 255, 0.12) transparent;
 }
 
-.admin-sidebar-footer {
+/* Slim Custom Scrollbar (WebKit) */
+.admin-sidebar-scroll-nav::-webkit-scrollbar {
+  width: 4px;
+}
+
+.admin-sidebar-scroll-nav::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.admin-sidebar-scroll-nav::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.12);
+  border-radius: 8px;
+}
+
+.admin-sidebar-scroll-nav::-webkit-scrollbar-thumb:hover {
+  background: rgba(59, 130, 246, 0.5);
+}
+
+/* Section Divider Titles */
+.admin-nav-section-title {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #64748b;
+  padding: 14px 12px 6px;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.admin-sidebar-nav-divider {
+  height: 1px;
+  background: rgba(255, 255, 255, 0.07);
+  margin: 12px 6px;
+}
+
+/* ====================================================================
+   4. NAVIGATION LINKS & GROUP EXPAND BUTTONS
+   ==================================================================== */
+.admin-sidebar-link,
+.admin-group-btn {
+  width: 100%;
+  min-height: 44px;
   display: flex;
   align-items: center;
   gap: 12px;
-  padding: 17px;
-  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 0 13px;
+  border-radius: 12px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #94a3b8;
+  text-decoration: none;
+  font-size: 13.5px;
+  font-weight: 600;
+  font-family: inherit;
+  cursor: pointer;
+  position: relative;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+  text-align: left;
 }
 
-.admin-footer-icon {
-  width: 37px;
-  height: 37px;
+.admin-sidebar-link:hover,
+.admin-group-btn:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border-color: rgba(255, 255, 255, 0.04);
+}
+
+.admin-sidebar-link:focus-visible,
+.admin-group-btn:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 1px;
+}
+
+/* Left Glowing Accent Bar */
+.admin-link-active-bar {
+  position: absolute;
+  left: 0;
+  top: 8px;
+  bottom: 8px;
+  width: 3.5px;
+  border-radius: 0 4px 4px 0;
+  background: transparent;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.admin-sidebar-link.active .admin-link-active-bar,
+.admin-group-btn.group-active .admin-link-active-bar {
+  background: #3b82f6;
+  box-shadow: 0 0 10px rgba(59, 130, 246, 0.8);
+}
+
+.admin-sidebar-link:hover:not(.active) .admin-link-active-bar,
+.admin-group-btn:hover:not(.group-active) .admin-link-active-bar {
+  background: rgba(59, 130, 246, 0.3);
+}
+
+/* Active Top-Level Links */
+.admin-sidebar-link.active {
+  background: rgba(59, 130, 246, 0.14);
+  color: #ffffff;
+  border-color: rgba(59, 130, 246, 0.28);
+  box-shadow: 0 2px 10px rgba(59, 130, 246, 0.12);
+}
+
+.admin-sidebar-link.active .admin-link-icon-wrap {
+  color: #60a5fa;
+}
+
+/* Active Right Indicator Dot */
+.admin-link-active-indicator {
+  position: absolute;
+  right: 12px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 8px #3b82f6;
+}
+
+/* Icon Container */
+.admin-link-icon-wrap {
+  width: 22px;
+  height: 22px;
   display: grid;
   place-items: center;
+  flex-shrink: 0;
+  color: #94a3b8;
+  transition: color 0.2s ease, transform 0.2s ease;
+}
+
+.admin-sidebar-link:hover .admin-link-icon-wrap,
+.admin-group-btn:hover .admin-link-icon-wrap {
+  color: #ffffff;
+  transform: scale(1.06);
+}
+
+.admin-link-label {
+  flex: 1;
+  text-align: left;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+/* Chevron & Group State */
+.admin-group-chevron {
+  color: #64748b;
+  flex-shrink: 0;
+  margin-left: auto;
+  transition: transform 0.25s cubic-bezier(0.4, 0, 0.2, 1), color 0.2s ease;
+}
+
+.admin-group-chevron.rotated {
+  transform: rotate(180deg);
+  color: #3b82f6;
+}
+
+.admin-group-dot-indicator {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #3b82f6;
+  box-shadow: 0 0 6px #3b82f6;
+  margin-right: 6px;
+  flex-shrink: 0;
+}
+
+/* Group Button when a Child is Active */
+.admin-group-btn.group-active {
+  color: #ffffff;
+  background: rgba(59, 130, 246, 0.08);
+  border-color: rgba(59, 130, 246, 0.2);
+}
+
+.admin-group-btn.group-active .admin-link-icon-wrap {
+  color: #3b82f6;
+}
+
+/* Submenu Items & Hierarchy Indentation */
+.admin-sidebar-submenu {
+  margin-left: 20px;
+  margin-top: 2px;
+  margin-bottom: 4px;
+  padding: 4px 0 4px 12px;
+  border-left: 1.5px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  animation: adminSubmenuSlideDown 0.22s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+@keyframes adminSubmenuSlideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-4px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.admin-sidebar-link.is-submenu-child {
+  min-height: 38px;
+  font-size: 13px;
+  padding: 0 10px;
   border-radius: 10px;
-  background: rgba(139, 123, 245, 0.2);
-  color: #b8aaff;
+  color: #94a3b8;
 }
 
-.admin-sidebar-footer strong,
-.admin-sidebar-footer span {
-  display: block;
+.admin-sidebar-link.is-submenu-child:hover {
+  background: rgba(255, 255, 255, 0.05);
+  color: #f1f5f9;
 }
 
-.admin-sidebar-footer strong {
-  color: #fff;
+.admin-sidebar-link.is-submenu-child.active {
+  background: rgba(59, 130, 246, 0.16);
+  color: #ffffff;
+  border-color: rgba(59, 130, 246, 0.3);
+  font-weight: 600;
+}
+
+/* ====================================================================
+   5. COLLAPSED MODE STYLING & FLOATING TOOLTIPS (80px)
+   ==================================================================== */
+.admin-sidebar-container.is-collapsed {
+  width: 80px;
+}
+
+.admin-sidebar-container.is-collapsed .admin-sidebar-scroll-nav {
+  padding-left: 14px;
+  padding-right: 14px;
+  align-items: center;
+}
+
+.admin-sidebar-container.is-collapsed .admin-sidebar-link,
+.admin-sidebar-container.is-collapsed .admin-group-btn {
+  justify-content: center;
+  padding: 0;
+  width: 50px;
+  height: 44px;
+  min-height: 44px;
+  border-radius: 12px;
+}
+
+.admin-sidebar-container.is-collapsed .admin-link-active-bar {
+  left: 0;
+  top: 7px;
+  bottom: 7px;
+  width: 3px;
+}
+
+/* Active Dot on Parent Group in Collapsed Mode */
+.admin-collapsed-child-active-dot {
+  position: absolute;
+  top: 8px;
+  right: 8px;
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: #3b82f6;
+  border: 1.5px solid #101b35;
+  box-shadow: 0 0 8px #3b82f6;
+}
+
+/* Floating Tooltips in Collapsed Mode */
+.admin-sidebar-container.is-collapsed [data-tooltip] {
+  position: relative;
+}
+
+.admin-sidebar-container.is-collapsed [data-tooltip]::after {
+  content: attr(data-tooltip);
+  position: absolute;
+  left: calc(100% + 14px);
+  top: 50%;
+  transform: translateY(-50%) translateX(-6px);
+  background: #0b1326;
+  color: #f8fafc;
+  padding: 6px 12px;
+  border-radius: 8px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.01em;
+  white-space: nowrap;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.6), 0 4px 10px -2px rgba(0, 0, 0, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  pointer-events: none;
+  z-index: 1200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1),
+    transform 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-sidebar-container.is-collapsed [data-tooltip]::before {
+  content: "";
+  position: absolute;
+  left: calc(100% + 8px);
+  top: 50%;
+  transform: translateY(-50%);
+  border-width: 5px 6px 5px 0;
+  border-style: solid;
+  border-color: transparent #0b1326 transparent transparent;
+  pointer-events: none;
+  z-index: 1200;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.admin-sidebar-container.is-collapsed [data-tooltip]:hover::after {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(-50%) translateX(0);
+}
+
+.admin-sidebar-container.is-collapsed [data-tooltip]:hover::before {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* ====================================================================
+   6. PINNED USER PROFILE FOOTER (#0B1326)
+   ==================================================================== */
+.admin-sidebar-profile-footer {
+  height: 74px;
+  min-height: 74px;
+  background-color: #0b1326;
+  border-top: 1px solid rgba(255, 255, 255, 0.07);
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 0 16px;
+  position: relative;
+  flex-shrink: 0;
+}
+
+.admin-footer-avatar-wrap {
+  flex-shrink: 0;
+}
+
+.admin-footer-avatar {
+  width: 40px;
+  height: 40px;
+  border-radius: 12px;
+  background: linear-gradient(135deg, #1d4ed8 0%, #3b82f6 100%);
+  color: #ffffff;
+  font-size: 13px;
+  font-weight: 700;
+  display: grid;
+  place-items: center;
+  position: relative;
+  box-shadow: 0 2px 8px rgba(37, 99, 235, 0.3);
+}
+
+.admin-online-badge {
+  position: absolute;
+  bottom: -2px;
+  right: -2px;
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: #10b981;
+  border: 2px solid #0b1326;
+  box-shadow: 0 0 6px rgba(16, 185, 129, 0.7);
+}
+
+.admin-footer-user-meta {
+  flex: 1;
+  min-width: 0;
+  display: flex;
+  flex-direction: column;
+  line-height: 1.25;
+}
+
+.admin-footer-user-name {
+  font-size: 13.5px;
+  font-weight: 700;
+  color: #ffffff;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.admin-footer-user-role {
+  font-size: 11px;
+  color: #64748b;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin-top: 2px;
+}
+
+/* Logout Action Button */
+.admin-footer-logout-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
+  border: 1px solid transparent;
+  background: transparent;
+  color: #94a3b8;
+  display: grid;
+  place-items: center;
+  cursor: pointer;
+  flex-shrink: 0;
+  transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  outline: none;
+}
+
+.admin-footer-logout-btn:hover {
+  background: rgba(239, 68, 68, 0.16);
+  color: #ef4444;
+  border-color: rgba(239, 68, 68, 0.25);
+  transform: scale(1.05);
+}
+
+.admin-footer-logout-btn:focus-visible {
+  outline: 2px solid #ef4444;
+  outline-offset: 1px;
+}
+
+/* Collapsed Footer: Stack Avatar & Logout Button */
+.admin-sidebar-container.is-collapsed .admin-sidebar-profile-footer {
+  flex-direction: column;
+  height: 94px;
+  min-height: 94px;
+  padding: 10px 0;
+  justify-content: center;
+  align-items: center;
+  gap: 8px;
+}
+
+.admin-sidebar-container.is-collapsed .admin-footer-avatar {
+  width: 36px;
+  height: 36px;
   font-size: 12px;
 }
 
-.admin-sidebar-footer span {
-  color: #aaa6ca;
-  font-size: 11px;
-  margin-top: 4px;
+.admin-sidebar-container.is-collapsed .admin-footer-logout-btn {
+  width: 32px;
+  height: 32px;
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.04);
 }
 
-.admin-mobile-toggle,
-.admin-mobile-overlay {
+/* ====================================================================
+   7. MOBILE RESPONSIVE DRAWER & BLURRED BACKDROP (< 992px)
+   ==================================================================== */
+.admin-mobile-toggle-btn {
   display: none;
 }
 
-@media (max-width: 768px) {
-  .admin-mobile-toggle {
+.admin-mobile-drawer-backdrop {
+  display: none;
+}
+
+@media (max-width: 991.98px) {
+  /* Floating Hamburger Button */
+  .admin-mobile-toggle-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
     position: fixed;
-    display: grid;
-    place-items: center;
-    top: 15px;
-    left: 15px;
-    width: 42px;
-    height: 42px;
-    border: 0;
-    border-radius: 10px;
-    background: #29245c;
-    color: white;
+    top: 16px;
+    left: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #0b1326;
+    color: #ffffff;
     z-index: 1100;
     cursor: pointer;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.35);
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   }
 
-  .admin-sidebar,
-  .admin-sidebar.collapsed {
-    width: 275px;
-    transform: translateX(-100%);
+  .admin-mobile-toggle-btn:hover {
+    background: #3b82f6;
+    border-color: #3b82f6;
+    transform: scale(1.05);
   }
 
-  .admin-sidebar.mobile-open {
-    transform: translateX(0);
+  .admin-mobile-toggle-btn:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
   }
 
-  .admin-sidebar.mobile-open .admin-brand-text,
-  .admin-sidebar.mobile-open .admin-section-label,
-  .admin-sidebar.mobile-open .admin-nav-link span,
-  .admin-sidebar.mobile-open .admin-group-button span,
-  .admin-sidebar.mobile-open .admin-chevron,
-  .admin-sidebar.mobile-open .admin-sidebar-footer {
-    display: initial;
-  }
-
-  .admin-sidebar.mobile-open .admin-collapse-button {
-    display: none;
-  }
-
-  .admin-mobile-overlay {
+  /* Blurred Backdrop Overlay */
+  .admin-mobile-drawer-backdrop {
     display: block;
     position: fixed;
     inset: 0;
-    background: rgba(10, 10, 30, 0.5);
-    border: 0;
+    background: rgba(11, 19, 38, 0.75);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
     z-index: 999;
+    animation: adminBackdropFadeIn 0.22s ease-out;
+  }
+
+  @keyframes adminBackdropFadeIn {
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  /* Mobile Drawer Sliding */
+  .admin-sidebar-container,
+  .admin-sidebar-container.is-collapsed {
+    width: 290px !important;
+    transform: translateX(-100%);
+    box-shadow: 12px 0 40px rgba(0, 0, 0, 0.65);
+  }
+
+  .admin-sidebar-container.is-mobile-open {
+    transform: translateX(0);
+  }
+
+  /* Desktop Collapse Toggle Hidden on Mobile */
+  .admin-collapse-toggle-btn {
+    display: none !important;
+  }
+
+  /* Mobile Drawer Quick Close Button */
+  .admin-mobile-drawer-close-btn {
+    display: grid;
+    place-items: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: rgba(255, 255, 255, 0.05);
+    color: #94a3b8;
+    cursor: pointer;
+    margin-left: auto;
+    transition: all 0.2s ease;
+  }
+
+  .admin-mobile-drawer-close-btn:hover {
+    background: rgba(239, 68, 68, 0.16);
+    color: #ef4444;
+    border-color: rgba(239, 68, 68, 0.3);
   }
 }
 
-.admin-main-content {
-  min-height: 100vh;
-  margin-left: 275px;
-  padding: 28px;
-  background: #f5f6fc;
-  transition: margin-left 0.3s ease;
-}
-
-@media (max-width: 768px) {
-  .admin-main-content {
-    margin-left: 0;
-    padding: 75px 16px 20px;
+/* ====================================================================
+   8. ACCESSIBILITY - REDUCED MOTION
+   ==================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  .admin-sidebar-container,
+  .admin-collapse-toggle-btn,
+  .admin-sidebar-link,
+  .admin-group-btn,
+  .admin-group-chevron,
+  .admin-sidebar-submenu,
+  .admin-footer-logout-btn,
+  .admin-mobile-toggle-btn,
+  .admin-mobile-drawer-close-btn {
+    transition: none !important;
+    animation: none !important;
   }
 }

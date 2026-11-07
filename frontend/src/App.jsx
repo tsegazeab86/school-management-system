@@ -10,7 +10,7 @@ import {
 // Home and Authentication
 import Home from "./pages/Home";
 import Login from "./pages/auth/Login";
-import Signup from "./pages/auth/Signup";
+// import Signup from "./pages/auth/Signup";
 import MainLayout from "./layouts/MainLayout";
 
 // Registrar
@@ -24,7 +24,11 @@ const ManageClasses = lazy(() => import("./pages/admin/ManageClasses"));
 const ManageSubjects = lazy(() => import("./pages/admin/ManageSubjects"));
 const ManageUsers = lazy(() => import("./pages/admin/ManageUsers"));
 const AdminReports = lazy(() => import("./pages/admin/AdminReports"));
+const ManageStaff = lazy(() => import("./pages/admin/ManageStaff"));
+const AttendanceManagement = lazy(() => import("./pages/admin/ManageAttendance"));
 const SystemSettings = lazy(() => import("./pages/admin/SystemSettings"));
+const ManageParents = lazy(() => import("./pages/admin/ManageParents"));
+const AcademicYears = lazy(() => import("./pages/admin/AcademicYears"));
 
 // Teacher Pages
 const TeacherDashboard = lazy(() => import("./pages/teacher/TeacherDashboard"));
@@ -50,7 +54,12 @@ const StudentAnnouncements = lazy(() => import("./pages/student/StudentAnnouncem
 const StudentMessages = lazy(() => import("./pages/student/StudentMessages"));
 const StudentProfile = lazy(() => import("./pages/student/StudentProfile"));
 const StudentFees = lazy(() => import("./pages/student/StudentFees"));
-
+const ApplyAdmission = lazy(
+  () => import("./pages/admission/ApplyAdmission")
+);
+const ForgotPassword = lazy(
+  () => import("./pages/auth/ForgotPassword")
+);
 // Parent Pages
 const ParentDashboard = lazy(() => import("./pages/parent/ParentDashboard"));
 const ParentChildren = lazy(() => import("./pages/parent/ParentChildren"));
@@ -214,39 +223,49 @@ function RolePage() {
   if (role === "parent" && page === "reports") {
     return <ParentReports />;
   }
-// ================= ADMIN ROUTES =================
+  // ================= ADMIN ROUTES =================
 
-if (role === "admin" && page === "dashboard") {
-  return <AdminDashboard />;
-}
+  if (role === "admin" && page === "dashboard") {
+    return <AdminDashboard />;
+  }
 
-if (role === "admin" && page === "users") {
-  return <ManageUsers />;
-}
+  if (role === "admin" && page === "users") {
+    return <ManageUsers />;
+  }
 
-if (role === "admin" && page === "students") {
-  return <ManageStudents />;
-}
+  if (role === "admin" && page === "students") {
+    return <ManageStudents />;
+  }
 
-if (role === "admin" && page === "teachers") {
-  return <ManageTeachers />;
-}
+  if (role === "admin" && page === "attendance") {
+    return <AttendanceManagement />;
+  }
+  if (role === "admin" && page === "teachers") {
+    return <ManageTeachers />;
+  }
 
-if (role === "admin" && page === "classes") {
-  return <ManageClasses />;
-}
+  if (role === "admin" && page === "classes") {
+    return <ManageClasses />;
+  }
+  if (role === "admin" && page === "staff") {
+    return <ManageStaff />;
+  }
+  if (role === "admin" && page === "subjects") {
+    return <ManageSubjects />;
+  }
+  if (role === "admin" && page === "parents") {
+    return <ManageParents />;
+  }
+  if (role === "admin" && page === "academic-years") {
+    return <AcademicYears />;
+  }
+  if (role === "admin" && page === "reports") {
+    return <AdminReports />;
+  }
 
-if (role === "admin" && page === "subjects") {
-  return <ManageSubjects />;
-}
-
-if (role === "admin" && page === "reports") {
-  return <AdminReports />;
-}
-
-if (role === "admin" && page === "settings") {
-  return <SystemSettings />;
-}
+  if (role === "admin" && page === "settings") {
+    return <SystemSettings />;
+  }
   // ================= TEACHER ROUTES =================
 
   if (role === "teacher" && page === "dashboard") {
@@ -352,31 +371,53 @@ if (role === "admin" && page === "settings") {
     </div>
   );
 }
-
-
 // ================= MAIN APP =================
 
 function App() {
   return (
     <BrowserRouter>
-      <Suspense fallback={<div role="status">Loading...</div>}>
+      <Suspense
+        fallback={
+          <div className="loading-screen">
+            Loading...
+          </div>
+        }
+      >
         <Routes>
-
+          {/* Public Pages */}
           <Route path="/" element={<Home />} />
           <Route path="/login" element={<Login />} />
-          <Route path="/signup" element={<Signup />} />
+          {/* <Route path="/signup" element={<Signup />} /> */}
 
-          {/* Registrar uses its own layout */}
+          {/* Admission Application Page */}
+          <Route
+            path="/admission"
+            element={<ApplyAdmission />}
+          />
+
+          {/* Registrar Pages */}
           <Route
             path="/registrar/*"
             element={<RegistrarRolePage />}
           />
 
-          {/* Other roles use MainLayout */}
-          <Route path="/:role" element={<MainLayout />}>
+          {/* Role-Based Dashboard Pages */}
+          <Route path="/:role/*" element={<MainLayout />}>
+            <Route index element={<RolePage />} />
             <Route path="*" element={<RolePage />} />
           </Route>
-
+          <Route path="/forgot-password" element={<ForgotPassword />} />
+          {/* Not Found */}
+          <Route
+            path="*"
+            element={
+              <div style={{ textAlign: "center", padding: "80px 20px" }}>
+                <h1>404 - Page Not Found</h1>
+                <p>The page you are looking for does not exist.</p>
+                <a href="/">Return Home</a>
+              </div>
+            }
+          />
         </Routes>
       </Suspense>
     </BrowserRouter>
